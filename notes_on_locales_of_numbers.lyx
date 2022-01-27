@@ -1,0 +1,224 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Notes on Locales of Numbers
+\end_layout
+
+\begin_layout Author
+Samuel Lloyd-Lindholm
+\end_layout
+
+\begin_layout Date
+27/01/2022
+\end_layout
+
+\begin_layout Standard
+During my conversations with Ittay Weiss at the University of Portsmouth
+ we have explored an alternative to Real Numbers.
+ The need for this stems from (what might be thought of as controversial)
+ vagueness when constructing Real Numbers in classical mathematics.
+ Irrespective of the motivations, here follows some notes on what we have
+ discussed in our journey towards the Local of Numbers.
+\end_layout
+
+\begin_layout Section*
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The justification for Natural Numbers 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+ is fairly intuitive.
+ If we accept the usual picture of counting objects as our starting point
+ for 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+ then operations of addition, multiplication, greater-equal and equality
+ 
+\begin_inset Formula $\left(+,\cdot,\leq,=\right)$
+\end_inset
+
+ are fairly standard extensions of this system.
+ These justifications and operations can be explored in their own right
+ but are not the focus of our work here, instead we focus on extending our
+ picture of numbers to include the notion of subtraction and so forming
+ the Integers 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Syntax
+\end_layout
+
+\begin_layout Standard
+The route to examining the operations on numbers involves a brief detour
+ to explore our use of syntax and what this means to our usage of numbers.
+ When we use numbers in our language we forget that there is an inbuilt
+ shortcut that we make use of all the time, this shortcut involves concatenating
+ (or removing) some of the words to form the result; 
+\begin_inset Quotes eld
+\end_inset
+
+twenty plus three is twenty three
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The same thing happens when we look at the syntax for operations on 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+, we merge the syntax to solve it; 
+\begin_inset Formula $20+3=23$
+\end_inset
+
+, or 
+\begin_inset Formula $2\cdot10=20$
+\end_inset
+
+.
+ This process doesn't work all the time for all operations and works differently
+ for different languages or bases, but the shortcut is useful and we should
+ note that it doesn't need to be that way.
+ If we wanted to make things hard for ourselves we could represent each
+ Natural Number individually, never repeating any words or symbols.
+\end_layout
+
+\begin_layout Subsection*
+Solving to 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the syntax shortcut as our initial approach we can examine how solving
+ problems could be done (albeit badly) by simple concatenation of syntax.
+ In such a case solving addition of 
+\begin_inset Formula $20+3$
+\end_inset
+
+ would become 
+\begin_inset Formula $(20,3)=(20,3)$
+\end_inset
+
+.
+ Not very impressive but functional in this case.
+ We can generalise this to be 
+\begin_inset Formula $solve(m,n)=(m,n)$
+\end_inset
+
+.
+ Now to get this working for for an arbitrary operation 
+\begin_inset Formula $\mathbb{N}\times\mathbb{N}\rightarrow\nicefrac{\mathbb{N}\times\mathbb{N}}{\sim}$
+\end_inset
+
+ (where 
+\begin_inset Formula $\sim$
+\end_inset
+
+ stands for a looser form equality) we would like the result to read 
+\begin_inset Formula $(a,b)\sim(\alpha,\beta)$
+\end_inset
+
+.
+ However we now need to do more than just glue our syntax together, we need
+ to adjust the symbols themselves according to some process.
+ What we need to provide for is a situation of subtraction where 
+\begin_inset Formula $(5,3)\sim(7,5)$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
