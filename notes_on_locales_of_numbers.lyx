@@ -6,6 +6,9 @@
 \origin unavailable
 \textclass article
 \use_default_options true
+\begin_modules
+theorems-std
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -29,6 +32,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -44,6 +48,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -169,11 +174,11 @@ twenty plus three is twenty three
  for different languages or bases, but the shortcut is useful and we should
  note that it doesn't need to be that way.
  If we wanted to make things hard for ourselves we could represent each
- Natural Number individually, never repeating any words or symbols.
+ Natural Number individually, never repeating any words or symbols just
+ as we do for numbers 0-20.
 \end_layout
 
 \begin_layout Subsection*
-Solving to 
 \begin_inset Formula $\mathbb{Z}$
 \end_inset
 
@@ -193,8 +198,8 @@ Using the syntax shortcut as our initial approach we can examine how solving
 
 .
  Not very impressive but functional in this case.
- We can generalise this to be 
-\begin_inset Formula $solve(m,n)=(m,n)$
+ We can generalize this to be 
+\begin_inset Formula $solve(a,b)=(a,b)$
 \end_inset
 
 .
@@ -206,18 +211,383 @@ Using the syntax shortcut as our initial approach we can examine how solving
 \begin_inset Formula $\sim$
 \end_inset
 
- stands for a looser form equality) we would like the result to read 
+ stands for a looser form equality) we need to do more than just glue our
+ syntax together, we need to declare a relationship between the symbols
+ themselves and so account for the situation of subtraction (
+\begin_inset Formula $5-3=7-5$
+\end_inset
+
+).
+ Generically we can write this as 
 \begin_inset Formula $(a,b)\sim(\alpha,\beta)$
 \end_inset
 
-.
- However we now need to do more than just glue our syntax together, we need
- to adjust the symbols themselves according to some process.
- What we need to provide for is a situation of subtraction where 
-\begin_inset Formula $(5,3)\sim(7,5)$
+ using our looser equality relation, and define that
+\begin_inset Formula 
+\[
+\exists k\in\mathbb{N}\quad a+k=\alpha,\quad b+k=\beta\quad\mathrm{{or}\quad a=\alpha+k,\quad b=\beta+k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From here we can see that
+\begin_inset Formula 
+\[
+a+\beta=\alpha+b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as 
+\begin_inset Formula $\alpha=a+k$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta=b+k$
+\end_inset
+
+, and so
+\begin_inset Formula 
+\[
+a-b=\alpha-\beta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is the familiar subtraction relation we started with (
+\begin_inset Formula $5-3=7-5)$
 \end_inset
 
 .
+ And so we can say this extends our Natural numbers to the Integers
+\begin_inset Formula 
+\[
+\mathbb{Z}\rightarrow\nicefrac{\mathbb{N}\times\mathbb{N}}{\sim}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbb{{Q}^{\mathrm{{+}}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Just as we have created Integers from the Natural Numbers we now look to
+ repeat the process for the positive Rationals.
+ The steps are identical but the operation involves multiplication and division
+ 
+\begin_inset Formula $(\cdot,/)$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+\mathbb{{N}\times\mathbb{{N}\rightarrow}}\nicefrac{\mathbb{N}\times\mathbb{N}}{\sim}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\exists k\in\mathbb{{N}}\quad a\cdot k=\alpha,\quad b\cdot k=\beta\quad\mathrm{{or}}\quad a=\alpha\cdot k,\quad b=\beta\cdot k
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and we see that
+\begin_inset Formula 
+\[
+a\cdot\beta=\alpha\cdot b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula 
+\[
+a/b=\alpha/\beta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+this defines the relationship that extends the Natural Numbers to the positive
+ Rationals
+\begin_inset Formula 
+\[
+\mathbb{{Q}^{\mathrm{{+}}}}\rightarrow\nicefrac{\mathbb{N}\times\mathbb{N}}{\sim}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Extending to 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To extend the above process from 
+\begin_inset Formula $\mathbb{{Q^{\mathrm{{+}}}}}$
+\end_inset
+
+ the positive Rationals to 
+\begin_inset Formula $\mathbb{{Q}}$
+\end_inset
+
+ the full Rationals we follow the same process as before but this time the
+ starting point is the positive Rationals: 
+\begin_inset Formula $\mathbb{Q^{\mathrm{+}}}\times\mathbb{\mathbb{Q^{\mathrm{+}}}}\rightarrow\nicefrac{\mathbb{\mathbb{Q^{\mathrm{+}}}}\times\mathbb{\mathbb{Q^{\mathrm{+}}}}}{\sim}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\exists k\in\mathbb{Q}\quad a+k=\alpha,\quad b+k=\beta\quad\mathrm{{or}\quad a=\alpha+k,\quad b=\beta+k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Just as before we end up with addition and subtraction and so extend the
+ positive rationals into the full rationals:
+\begin_inset Formula 
+\[
+\mathbb{{Q}}\rightarrow\nicefrac{\mathbb{{Q}^{\mathrm{{+}}}}\times\mathbb{{Q}^{\mathrm{{+}}}}}{\sim}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Negative Numbers
+\end_layout
+
+\begin_layout Standard
+We haven't said anything explicit about negative numbers so far, and this
+ is because to some extent they aren't needed.
+ If we look back at 
+\begin_inset Formula $\mathbb{{Z}}\rightarrow\nicefrac{\mathbb{N}\times\mathbb{N}}{\sim}$
+\end_inset
+
+ we can see that the order of the pairs of Natural Numbers in our operation
+ has some syntactic effect.
+\begin_inset Formula 
+\[
+(1,0)\sim(2,1)\sim(3,2)\quad\mathrm{{and\:classically}\quad1,2,3}
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+(0,1)\sim(1,2)\sim(2,3)\quad\mathrm{{and\:classically}\quad-1,-2,-3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This ordering is in effect the equivalent of the usual description of positive
+ and negative numbers, but here it is not given a name, just left to be
+ interpreted as needed.
+ If we want to think about this ordering as positive and negative, east
+ and west, or sweet and sour it makes no real difference.
+\end_layout
+
+\begin_layout Section*
+Smallest 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+There is no smallest positive value in 
+\begin_inset Formula $\mathbb{Q^{\mathrm{{+}}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\forall x\in\mathbb{{Q^{\mathrm{{+}}}}}.(x=0)\lor(\exists y\in\mathbb{{Q^{\mathrm{{+}}}}}\backslash\{0\}:y<x)
+\]
+
+\end_inset
+
+let 
+\begin_inset Formula $x\in\mathbb{{Q^{\mathrm{{+}}}}}$
+\end_inset
+
+, either 
+\begin_inset Formula $x=0$
+\end_inset
+
+, or we can take 
+\begin_inset Formula $y=x/2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can mirror Theorem 1 to work for 'negative' Rationals, as there isn't
+ anything special about changing the order of the symbols, and bring the
+ two together to extend the theorem for all 
+\begin_inset Formula $\mathbb{{Q}}$
+\end_inset
+
+.
+ (Note: The above situation assumes a type of special situation with the
+ value 
+\begin_inset Formula $0$
+\end_inset
+
+, where this value seems to be minimal but not positive, and so doesn't
+ apply to the smallest positive value).
+ 
+\end_layout
+
+\begin_layout Section*
+Membership
+\end_layout
+
+\begin_layout Standard
+Theorem 1 partly describes the situation of an Open Set, where we can forever
+ zoom down into further values of 
+\begin_inset Formula $\mathbb{{Q}}$
+\end_inset
+
+.
+ We noted that at the value 
+\begin_inset Formula $0$
+\end_inset
+
+ we can't go any smaller because we've hit the definition of the smallest
+ value (albeit not positive).
+ For open sets the boundaries are unreachable, such as: 
+\begin_inset Formula $\{x\in\mathbb{{Q}}\mid0<x<1\}$
+\end_inset
+
+.
+ The implication of this is subtle; if we have a set 
+\begin_inset Formula 
+\[
+S=\{y\in\mathbb{{Q}}\mid0<y<1\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which implies that 
+\begin_inset Formula $S\subset\mathbb{{Q}}$
+\end_inset
+
+, then if we have another value 
+\begin_inset Formula $x\in\mathbb{{Q}}$
+\end_inset
+
+ how can we tell if it is also in 
+\begin_inset Formula $S$
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Standard
+Well it needs to be smaller than 
+\begin_inset Formula $1$
+\end_inset
+
+ and larger than 
+\begin_inset Formula $0$
+\end_inset
+
+, but what precision do we need to say that 
+\begin_inset Formula $x$
+\end_inset
+
+ is in 
+\begin_inset Formula $S$
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Standard
+We need some 
+\begin_inset Formula $\epsilon>0$
+\end_inset
+
+ so that 
+\begin_inset Formula 
+\[
+\exists y\in S.x-y>\epsilon\qquad\mathrm{{and}\qquad\exists y\in S.y-x>\epsilon}
+\]
+
+\end_inset
+
+ 
 \end_layout
 
 \end_body
