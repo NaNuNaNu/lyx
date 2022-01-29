@@ -464,7 +464,7 @@ There is no smallest positive value in
 .
 \end_layout
 
-\begin_layout Proof
+\begin_layout Theorem
 \begin_inset Formula 
 \[
 \forall x\in\mathbb{{Q^{\mathrm{{+}}}}}.(x=0)\lor(\exists y\in\mathbb{{Q^{\mathrm{{+}}}}}\backslash\{0\}:y<x)
@@ -472,6 +472,10 @@ There is no smallest positive value in
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Proof
 let 
 \begin_inset Formula $x\in\mathbb{{Q^{\mathrm{{+}}}}}$
 \end_inset
@@ -484,13 +488,13 @@ let
 \begin_inset Formula $y=x/2$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
-We can mirror Theorem 1 to work for 'negative' Rationals, as there isn't
- anything special about changing the order of the symbols, and bring the
- two together to extend the theorem for all 
+We can mirror Theorem 1 to work for negative Rationals, as there isn't anything
+ special about changing the order of the symbols, and bring the two together
+ to extend the theorem for all 
 \begin_inset Formula $\mathbb{{Q}}$
 \end_inset
 
@@ -500,8 +504,7 @@ We can mirror Theorem 1 to work for 'negative' Rationals, as there isn't
 \begin_inset Formula $0$
 \end_inset
 
-, where this value seems to be minimal but not positive, and so doesn't
- apply to the smallest positive value).
+, where we stop trying to find a smaller value).
  
 \end_layout
 
@@ -576,18 +579,140 @@ Well it needs to be smaller than
 
 \begin_layout Standard
 We need some 
-\begin_inset Formula $\epsilon>0$
+\begin_inset Formula $\epsilon\in\mathbb{{Q}}>0$
 \end_inset
 
  so that 
 \begin_inset Formula 
 \[
-\exists y\in S.x-y>\epsilon\qquad\mathrm{{and}\qquad\exists y\in S.y-x>\epsilon}
+\exists y,z\in S\quad{s.t.}\quad(x-y>\epsilon)\land(z-x>\epsilon)\quad\mathrm{{holds.}}
 \]
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+If we now extend this notion to a set
+\begin_inset Formula 
+\[
+(a,b)=\{y\in\mathbb{{Q}}\mid a<y<b\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then we can describe a function 
+\begin_inset Formula $x(\epsilon)=t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall t\in(a,b).\exists\epsilon>0\quad s.t.\quad x(\epsilon)=t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+that represents a black box process which given an input precision 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ returns the value that would answer the question of does 
+\begin_inset Formula $x$
+\end_inset
+
+ fit into 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+x(\epsilon)=t\implies x\in(a,b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall x\in(a,b).\exists\epsilon>0:(x-\epsilon,x+\epsilon)\subseteq(a,b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+in other words, if we have some 
+\begin_inset Formula $\epsilon\in\mathbb{{Q}}>0$
+\end_inset
+
+ that can form a set around 
+\begin_inset Formula $x$
+\end_inset
+
+ and that lives inside 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ then it is safe to say that 
+\begin_inset Formula $x\in(a,b)$
+\end_inset
+
  
+\end_layout
+
+\begin_layout Section*
+Opens
+\end_layout
+
+\begin_layout Standard
+Using a subset of the rationals 
+\begin_inset Formula 
+\[
+U=\mathbb{{Q}}\setminus\{0\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we can show that 
+\begin_inset Formula $U\subseteq\mathbb{{Q}}$
+\end_inset
+
+ is open in 
+\begin_inset Formula $\mathbb{{Q}}$
+\end_inset
+
+ as
+\begin_inset Formula 
+\[
+\forall u\in U\exists\epsilon>0:(u-\epsilon,u+\epsilon)\subseteq U
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
