@@ -1,0 +1,421 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Excercises for COMPLETE JOIN LATTICES - A PRIMER
+\end_layout
+
+\begin_layout Author
+Samuel Lloyd-Lindholm
+\end_layout
+
+\begin_layout Section*
+Excercise 9.
+\end_layout
+
+\begin_layout Standard
+Show that if 
+\begin_inset Formula $X$
+\end_inset
+
+ is a set, then there is a 
+\series bold
+unique 
+\series default
+function 
+\begin_inset Formula $X\rightarrow\mathbf{1}$
+\end_inset
+
+ where 
+\begin_inset Formula $\mathbf{1}=\{*\}$
+\end_inset
+
+.
+ This is called a 
+\emph on
+terminal
+\emph default
+ object in 
+\series bold
+Set
+\series default
+.
+\end_layout
+
+\begin_layout Subsection*
+Proof.
+\end_layout
+
+\begin_layout Standard
+There is a 
+\begin_inset Formula $f:X\rightarrow\boldsymbol{1}$
+\end_inset
+
+ where 
+\begin_inset Formula $f(x)=*$
+\end_inset
+
+ given 
+\begin_inset Formula $x\in X$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ then 
+\begin_inset Formula 
+\[
+f(x)=*\quad\in\boldsymbol{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $g:X\rightarrow\mathbf{1}$
+\end_inset
+
+ also be a function, then 
+\begin_inset Formula 
+\[
+g(x)=*\quad\in\boldsymbol{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It follows that
+\begin_inset Formula 
+\[
+\forall x\in X.g(x)=*=f(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and so
+\begin_inset Formula 
+\[
+f=g
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Excercise 10.
+\end_layout
+
+\begin_layout Standard
+Show that a set 
+\begin_inset Formula $S$
+\end_inset
+
+ is 
+\emph on
+initial
+\emph default
+ if, and only if, 
+\begin_inset Formula $S$
+\end_inset
+
+ is empty, which is the dual concept to the 
+\emph on
+terminal
+\emph default
+ object in 
+\series bold
+Set
+\series default
+.
+\end_layout
+
+\begin_layout Subsection*
+Proof 1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S$
+\end_inset
+
+ is 
+\emph on
+initial
+\emph default
+ to 
+\begin_inset Formula $X$
+\end_inset
+
+ if there is a 
+\series bold
+unique
+\series default
+ function 
+\begin_inset Formula $S\rightarrow X$
+\end_inset
+
+ for all objects in 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be an object in the catrgory of 
+\series bold
+Set
+\series default
+, and let the sets 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ be disjoint objects in 
+\begin_inset Formula $X$
+\end_inset
+
+ so that,
+\begin_inset Formula 
+\[
+A\cap B=\emptyset
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $S$
+\end_inset
+
+ be a set with a unique function 
+\begin_inset Formula $f:S\rightarrow X$
+\end_inset
+
+ so that
+\begin_inset Formula 
+\[
+f(s)\in A\quad\mathrm{and\quad}f(s)\in B
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+this means that for any 
+\begin_inset Formula $s\in S$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f(s)\cap f(s)=\emptyset
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and so
+\begin_inset Formula 
+\[
+f(s)=\emptyset=S
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\blacksquare$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Proof 2.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathscr{A}$
+\end_inset
+
+ be a category.
+ An object 
+\begin_inset Formula $\mathbf{I}\in\mathscr{A}$
+\end_inset
+
+ is initial if for every 
+\begin_inset Formula $A\in\mathscr{A}$
+\end_inset
+
+, there is exactly one morphism 
+\begin_inset Formula $\boldsymbol{I}\rightarrow A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathscr{S}$
+\end_inset
+
+be a categoy of 
+\series bold
+Set
+\series default
+, and let 
+\begin_inset Formula $S\in\mathscr{S}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $A,B\in\mathscr{S}$
+\end_inset
+
+so that 
+\begin_inset Formula $A\cap B=\emptyset$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+There exists a unique function 
+\begin_inset Formula $f:S\rightarrow X$
+\end_inset
+
+ where 
+\begin_inset Formula $f(a)=A$
+\end_inset
+
+ and 
+\begin_inset Formula $f(b)=B$
+\end_inset
+
+ for 
+\begin_inset Formula $a,b\in S$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+f(a)\cap f(b)=\emptyset
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

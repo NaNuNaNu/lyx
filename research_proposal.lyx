@@ -1,0 +1,197 @@
+#LyX file created by tex2lyx 2.3
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/sam/work/src/github.com/NaNuNaNu/lyx/
+\textclass article
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Abstract
+Clustering theory, and Topological Data Analysis more broadly, are areas of research where ideas and tools from topology (and primarily algebraic topology) are used to solve practical problems. The current state of the art is a somewhat eclectic collection of ad-hoc techniques. A suitable mathematical foundation is sorely missing: starting with Kleinberg's impossibility theorem and through to Carlssen and Memoli's work, the need for such a foundation is clear. Category theory is used as the standard language in algebraic topology, and thus it naturally finds its way to TDA as well. Carlssen and Memoli suggested category theory as a foundation for clustering theory. Based on recent work of Weiss, we propose enriched categories as a foundation for clustering theory and TDA.
+\end_layout
+
+\begin_layout Section*
+Background
+\end_layout
+
+\begin_layout Standard
+Data clustering is a core part of exploratory data analysis. What distinguishes clustering from other forms of data analysis is the lack of class information, leading to an 'unsupervised' view of the data. The task of clustering must therefore be built upon features inherent in the data itself. Presently there is no systematic method for selecting the appropriate features, and it is this problem we target here.
+\end_layout
+
+\begin_layout Standard
+Previous work by Kleinberg 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "kleinberg2003"
+literal "false"
+
+\end_inset
+
+ has shown the impossibility of a fully rigid axiomatic approach to clustering. Expanding on this Carlssen and Memoli provided a uniqueness theorem using functors 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "carlsson2010classifying"
+literal "false"
+
+\end_inset
+
+. This sets the stage for the category based approach.
+\end_layout
+
+\begin_layout Standard
+A crucial element of our approach is to incorporate categories at the problem specification stage. Typically, a clustering or TDA problem starts with what is called a point cloud, which is nothing but a finite metric space. It is well known 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "lawvere"
+literal "false"
+
+\end_inset
+
+ that a metric space is a category enriched in the category 
+\begin_inset Formula $[0,\infty ]$
+\end_inset
+
+. Therefore, the input data in TDA is already a category.
+\end_layout
+
+\begin_layout Section*
+Goal and Objectives
+\end_layout
+
+\begin_layout Standard
+In recent work, Weiss demonstrated that Lawvere's view of metric spaces as enriched categories in fact captures all of topology, and in such a way that some fundamental constructions in topology have an enriched-categorical content. Moreover, the techniques are constructive – an important fact with applicability in mind. Further, Weiss showed that using enriched categories, clustering can be interpreted as a change of enrichment procedure. An analysis of clustering in that language connects seamlessly with well-known principles and results of category theory. The goal of the research project is to enhance and elaborate on this connection, aiming to establish enriched category theory as a foundation for clustering and TDA.
+\end_layout
+
+\begin_layout Standard
+A first objective will be to present enriched categories purely from the perspective of data analysis. This contrasts with the current state of the literature where categories and enrichment are typically presented from highly abstract positions. We will aim to add an 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+Introduction to enriched categories for the data scientist
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+ source to the existing literature.
+\end_layout
+
+\begin_layout Standard
+With the first objective in place, using the expertise and results acquired along the way, a second aim will be to use the new foundation in order to bring insight to the TDA landscape. An independent third aim would be to develop new techniques in TDA based on enrichment. In particular, we will look into extending a recent algorithm developed by Spivak and Wisnesky for computing Kan extensions 
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "spivak"
+literal "false"
+
+\end_inset
+
+, and study its extendibility to compute enriched Kan extensions.
+\end_layout
+
+\end_body
+\end_document

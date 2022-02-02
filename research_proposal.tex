@@ -1,0 +1,19 @@
+\begin{abstract}
+Clustering theory, and Topological Data Analysis more broadly, are areas of research where ideas and tools from topology (and primarily algebraic topology) are used to solve practical problems. The current state of the art is a somewhat eclectic collection of ad-hoc techniques. A suitable mathematical foundation is sorely missing: starting with Kleinberg's impossibility theorem and through to Carlssen and Memoli's work, the need for such a foundation is clear. Category theory is used as the standard language in algebraic topology, and thus it naturally finds its way to TDA as well. Carlssen and Memoli suggested category theory as a foundation for clustering theory. Based on recent work of Weiss, we propose enriched categories as a foundation for clustering theory and TDA. 
+
+\end{abstract}
+\section*{Background}
+
+Data clustering is a core part of exploratory data analysis. What distinguishes clustering from other forms of data analysis is the lack of class information, leading to an 'unsupervised' view of the data. The task of clustering must therefore be built upon features inherent in the data itself. Presently there is no systematic method for selecting the appropriate features, and it is this problem we target here.
+
+Previous work by Kleinberg ~\cite{kleinberg2003} has shown the impossibility of a fully rigid axiomatic approach to clustering. Expanding on this Carlssen and Memoli provided a uniqueness theorem using functors ~\cite{carlsson2010classifying}. This sets the stage for the category based approach.
+
+A crucial element of our approach is to incorporate categories at the problem specification stage. Typically, a clustering or TDA problem starts with what is called a point cloud, which is nothing but a finite metric space. It is well known ~\cite{lawvere} that a metric space is a category enriched in the category $[0,\infty ]$. Therefore, the input data in TDA is already a category. 
+
+\section*{Goal and Objectives}
+In recent work, Weiss demonstrated that Lawvere's view of metric spaces as enriched categories in fact captures all of topology, and in such a way that some fundamental constructions in topology have an enriched-categorical content. Moreover, the techniques are constructive -- an important fact with applicability in mind. Further, Weiss showed that using enriched categories, clustering can be interpreted as a change of enrichment procedure. An analysis of clustering in that language connects seamlessly with well-known principles and results of category theory. The goal of the research project is to enhance and elaborate on this connection, aiming to establish enriched category theory as a foundation for clustering and TDA. 
+
+A first objective will be to present enriched categories purely from the perspective of data analysis. This contrasts with the current state of the literature where categories and enrichment are typically presented from highly abstract positions. We will aim to add an "Introduction to enriched categories for the data scientist" source to the existing literature. 
+
+With the first objective in place, using the expertise and results acquired along the way, a second aim will be to use the new foundation in order to bring insight to the TDA landscape. An independent third aim would be to develop new techniques in TDA based on enrichment. In particular, we will look into extending a recent algorithm developed by Spivak and Wisnesky for computing Kan extensions ~\cite{spivak}, and study its extendibility to compute enriched Kan extensions. 
+
