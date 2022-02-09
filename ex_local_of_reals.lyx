@@ -268,16 +268,12 @@ t-\epsilon=a-r\qquad\mathrm{and}\qquad t+\epsilon=a+r
 and substituting this back in gives us
 \begin_inset Formula 
 \[
-B_{\epsilon}(t)=\{y\in\mathbb{Q}\mid t-t+a-r<y<t+a+r-t\}=\{y\in\mathbb{Q}\mid a-r<y<a+r\}
+t-(t-a+r)\le a-r<y<t+(a+r-t)\le a+r\implies B_{\epsilon}(t)\subseteq B_{a}(t)
 \]
 
 \end_inset
 
-and so we can see that 
-\begin_inset Formula $B_{\epsilon}(t)\subseteq B_{a}(t)$
-\end_inset
 
-.
 \end_layout
 
 \begin_layout Standard
@@ -400,6 +396,118 @@ n yeilding
 \end_inset
 
 ).
+ 
+\end_layout
+
+\begin_layout Proof
+Following the definition of an open set it is clear to see 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ is open as 
+\begin_inset Formula 
+\[
+\forall t\in\mathbb{Q}\exists\epsilon>0\quad s.t\quad B_{\epsilon}(t)\subseteq\mathbb{Q}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+For the empty set this similarly works but simply because 
+\begin_inset Formula $\forall t\in\emptyset$
+\end_inset
+
+ results in no elements.
+ 
+\end_layout
+
+\begin_layout Proof
+The intersection of finite number 
+\begin_inset Formula $i\in I$
+\end_inset
+
+ of open subsets 
+\begin_inset Formula $a_{i}\in\mathbb{Q}$
+\end_inset
+
+ can be seen to be open by looking at 
+\begin_inset Formula 
+\[
+a_{1}=\mathbb{Q}\quad\mathrm{and}\quad a_{2}=\mathbb{Q}/\{0\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+a_{1}\cap a_{2}=\mathbb{Q}/\{0\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+which results in an open set 
+\begin_inset Formula $\{x\in\mathbb{Q}\mid x>0<x\}$
+\end_inset
+
+.
+ Similary the union of the collection of open subsets 
+\begin_inset Formula 
+\[
+a_{1}\cup a_{2}=\mathbb{Q}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+is open.
+ These operations can be extended so that
+\begin_inset Formula 
+\[
+\bigcup_{i\in I}a_{i}=B_{\epsilon}(i)\subseteq\mathbb{Q}\qquad\mathrm{and}\qquad\bigcap_{i\in I}a_{i}=\emptyset
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This shows us that if we write 
+\begin_inset Formula $\varOmega(\mathbb{Q})$
+\end_inset
+
+ for the collection of all open subsets of 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+, ordered by inclusion we get a poset 
+\begin_inset Formula $(\varOmega(\mathbb{Q}),\le)$
+\end_inset
+
+.
+ We can see that this has arbitrary joins and finite meets, as per the above
+ definition, and so forms a lattice.
  
 \end_layout
 
