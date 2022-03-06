@@ -115,13 +115,13 @@ If additionally there is some uncertainty of the accuracy of the measurement
 \end_inset
 
  that can be defined by a tolerance factor 
-\begin_inset Formula $\epsilon>0$
+\begin_inset Formula $\varepsilon>0$
 \end_inset
 
  such that
 \begin_inset Formula 
 \[
-t-\epsilon<T<t+\epsilon
+t-\varepsilon<T<t+\varepsilon
 \]
 
 \end_inset
@@ -136,7 +136,7 @@ describes the experiment being accepted as successful.
 \end_inset
 
  what value of 
-\begin_inset Formula $\epsilon$
+\begin_inset Formula $\varepsilon$
 \end_inset
 
  guarantees our experiment 
@@ -155,7 +155,7 @@ describes the experiment being accepted as successful.
  From here we can see that
 \begin_inset Formula 
 \[
-t-\epsilon=0\qquad\mathrm{{and}}\qquad t+\epsilon=1
+t-\varepsilon=0\qquad\mathrm{{and}}\qquad t+\varepsilon=1
 \]
 
 \end_inset
@@ -165,17 +165,17 @@ t-\epsilon=0\qquad\mathrm{{and}}\qquad t+\epsilon=1
 
 \begin_layout Standard
 and so either 
-\begin_inset Formula $\epsilon=t$
+\begin_inset Formula $\varepsilon=t$
 \end_inset
 
  or 
-\begin_inset Formula $\epsilon=1-t$
+\begin_inset Formula $\varepsilon=1-t$
 \end_inset
 
  depending on which is more relevant to our experiment.
 \begin_inset Formula 
 \[
-\epsilon=min\{t,1-t\}
+\varepsilon=min\{t,1-t\}
 \]
 
 \end_inset
@@ -193,8 +193,7 @@ Let
 \end_inset
 
 .
- The *** concepts being defined need to be emphasised.
- I marked the relevant words and pressed CTRL-E*** 
+ The 
 \emph on
 open intervlal
 \emph default
@@ -213,12 +212,12 @@ radius
  is the set
 \begin_inset Formula 
 \[
-B_{r}(a)=\{x\in\mathbb{{Q}}\mid a-r<x<a+r\}.
+B_{r}(a)=\{x\in\mathbb{{Q}}\mid a-r<x<a+r\}
 \]
 
 \end_inset
 
-***I added a full-stop***.
+.
 \end_layout
 
 \begin_layout Proposition
@@ -236,17 +235,13 @@ Let
 \end_inset
 
 , then there exists 
-\begin_inset Formula $e>0$
-\end_inset
-
- *** don't you mean 
 \begin_inset Formula $\varepsilon>0$
 \end_inset
 
-?*** such that 
+ such that 
 \begin_inset Formula 
 \[
-B_{\epsilon}(t)\subseteq B_{r}(a)
+B_{\varepsilon}(t)\subseteq B_{r}(a)
 \]
 
 \end_inset
@@ -255,37 +250,13 @@ B_{\epsilon}(t)\subseteq B_{r}(a)
 \end_layout
 
 \begin_layout Proof
-\begin_inset Formula $B_{\epsilon}(t)=\{y\in\mathbb{Q}\mid t-\epsilon<y<t+\epsilon\}$
-\end_inset
+Generically we write
+\end_layout
 
-, and if 
-\begin_inset Formula $B_{\epsilon}(t)\subseteq B_{r}(a)$
-\end_inset
-
- then
+\begin_layout Proof
 \begin_inset Formula 
 \[
-a-r\le t-\epsilon<x<t+\epsilon\le a+r
-\]
-
-\end_inset
-
-and if we calculate 
-\begin_inset Formula $\epsilon$
-\end_inset
-
- as being the minimum difference between 
-\begin_inset Formula $t$
-\end_inset
-
- and the boundary of 
-\begin_inset Formula $B_{r}(a)$
-\end_inset
-
- we get 
-\begin_inset Formula 
-\[
-\epsilon=min\{t-a+r,a+r-t\}
+B_{\varepsilon}(t)=\{x\in\mathbb{Q}\mid t-\varepsilon<x<t+\varepsilon\}
 \]
 
 \end_inset
@@ -294,24 +265,65 @@ and if we calculate
 \end_layout
 
 \begin_layout Proof
-and substituting this back in gives us
+and given 
+\begin_inset Formula $t\in B_{r}(a)$
+\end_inset
+
+ then 
 \begin_inset Formula 
 \[
-a-r\le t-(t-a+r)<y<a+r\le t+(a+r-t)\implies B_{\epsilon}(t)\subseteq B_{a}(t)
+a-r+\varepsilon<x<a+r-\varepsilon
 \]
 
 \end_inset
 
- ***the proof you give is mimicing the thought process that led you to the
- proof.
- That may be suitable pedagogically, but you should learn to find the proof
- privately for yourself, and then communicate the proof succinctly.
- Try re-phrasing this proof to be short and to-the-point.
- Start by stating mathematically (not in words alone) precisely what needs
- to be proved.
- Then proceed to prove it directly, without explaining how you came up with
- the proof.
- ***
+
+\end_layout
+
+\begin_layout Proof
+if we chose 
+\begin_inset Formula $\varepsilon=r/2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+a-r/2<x<a+r/2
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+as 
+\begin_inset Formula 
+\[
+B_{r}(a)=\{x\in\mathbb{Q}\mid a-r<x<a+r\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+and so
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+B_{\varepsilon}(t)\subseteq B_{r}(a)
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -327,7 +339,7 @@ The above tells us that for any experimental result
 \end_inset
 
  we can define an accuracy 
-\begin_inset Formula $\epsilon>0$
+\begin_inset Formula $\varepsilon>0$
 \end_inset
 
  that ensures the experiment was a success.
@@ -342,11 +354,11 @@ The above tells us that for any experimental result
 \end_inset
 
  and noticing that there exists no 
-\begin_inset Formula $\epsilon>0$
+\begin_inset Formula $\varepsilon>0$
 \end_inset
 
  that satisfies 
-\begin_inset Formula $t-\epsilon\ge0$
+\begin_inset Formula $t-\varepsilon\ge0$
 \end_inset
 
  and similarly for 
@@ -354,11 +366,11 @@ The above tells us that for any experimental result
 \end_inset
 
  there is no 
-\begin_inset Formula $\epsilon>0$
+\begin_inset Formula $\varepsilon>0$
 \end_inset
 
  such that 
-\begin_inset Formula $t+\epsilon\le1$
+\begin_inset Formula $t+\varepsilon\le1$
 \end_inset
 
 .
@@ -373,22 +385,18 @@ A subset
 \emph on
 open
 \emph default
- ****<— emphasised *** if for all 
+ if for all 
 \begin_inset Formula $t\in U$
 \end_inset
 
  there exists an 
-\begin_inset Formula $\epsilon>0$
+\begin_inset Formula $\varepsilon>0$
 \end_inset
 
- ***use 
-\backslash
-varepsilon, not 
-\backslash
-epsilon *** such that
+ such that
 \begin_inset Formula 
 \[
-B_{\epsilon}(t)\subseteq U
+B_{\varepsilon}(t)\subseteq U
 \]
 
 \end_inset
@@ -397,18 +405,26 @@ B_{\epsilon}(t)\subseteq U
 \end_layout
 
 \begin_layout Standard
-The value of the open set of 
+The value of the 
+\emph on
+open
+\emph default
+ set of 
 \begin_inset Formula $U$
 \end_inset
 
  is that we can say with confidence that a rational value lies within it
  given some error 
-\begin_inset Formula $\epsilon>0$
+\begin_inset Formula $\varepsilon>0$
 \end_inset
 
 .
- This is not necessarily so with non-open sets, as there are situations
- (as expressed previously) where we cannot say this for certain.
+ This is not necessarily so with 
+\emph on
+non-open
+\emph default
+ sets, as there are situations (as expressed previously) where we cannot
+ say this for certain.
  
 \end_layout
 
@@ -446,214 +462,180 @@ n yeilding
 \end_layout
 
 \begin_layout Proof
-*** I added a proof environment here *** Following the definition of an
- open set it is clear to see 
-\begin_inset Formula $\mathbb{Q}$
-\end_inset
-
- is open as we can always find a radius 
-\begin_inset Formula $\epsilon$
-\end_inset
-
- in 
-\begin_inset Formula $\mathbb{Q}$
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\forall t\in\mathbb{Q}\exists\epsilon>0\quad s.t\quad B_{\epsilon}(t)\subseteq\mathbb{Q}
-\]
-
-\end_inset
-
-*** you are not proving anything here.
- You are saying 
-\begin_inset Quotes eld
-\end_inset
-
-it's true cause it's easy to see that it is true
-\begin_inset Quotes erd
-\end_inset
-
-.
- Instead, of leaving it implicit (as easy as it is) that a suitable 
-\begin_inset Formula $\varepsilon>0$
-\end_inset
-
- 
-\series bold
-can 
-\series default
-be found, how you you just say what that 
-\begin_inset Formula $\varepsilon$
-\end_inset
-
- is a 
-\series bold
-demonstrate
-\emph on
- 
-\series default
-\emph default
-that it does indeed work? ***
-\end_layout
-
-\begin_layout Proof
-For the empty set this similarly works but simply because 
-\begin_inset Formula $\forall t\in\emptyset$
-\end_inset
-
- results in no elements.
- *** you should say it is vacuously true***.
-\end_layout
-
-\begin_layout Proof
-The intersection of a finite number of open subsets is open as we can see
- if we take 
-\begin_inset Formula 
-\[
-a_{1}=\mathbb{Q}\quad\mathrm{and}\quad a_{2}=\mathbb{Q}\setminus\{0\}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Proof
-which are both open, the intersection yeilds
-\end_layout
-
-\begin_layout Proof
-\begin_inset Formula 
-\[
-a_{1}\cap a_{2}=\mathbb{Q}\setminus\{0\}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Proof
-which is an open set 
-\begin_inset Formula $\{x\in\mathbb{Q}\mid x\neq0\}$
-\end_inset
-
-.
- *** <— well, all you did here was show that the intersection of two very
- particular open sets is open.
- That may be considered circumstantial evidence for the claim that the intersect
-ion of any finite number of open subsets is open.
- You certainly did not prove the claim.
- Try again.
- State precisely, mathematically, what needs to be done.
- And then proceed to doing that.
- 
-\end_layout
-
-\begin_layout Proof
-Similarly the union of the collection of open subsets 
-\begin_inset Formula 
-\[
-a_{1}\cup a_{2}=\mathbb{Q}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Proof
-is open.
- This can be extended given 
-\begin_inset Formula $i\in I$
-\end_inset
-
- subsets of 
-\begin_inset Formula $\mathbb{Q}$
-\end_inset
-
- so that
-\begin_inset Formula 
-\[
-\bigcup_{i\in I}a_{i}=\mathbb{Q}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Proof
-*** same as above.
- You simply demonstrated it's true for these two open sets.
- Then you say 
-\begin_inset Quotes eld
-\end_inset
-
-This can be extended ....
- 
-\begin_inset Quotes eld
-\end_inset
-
- well, then you're simply saying 
-\begin_inset Quotes eld
-\end_inset
-
-I was asked to do this, and I'm 'doing' it by telling you that it can be
- done
-\begin_inset Quotes erd
-\end_inset
-
-.
- That won't fly.
- Try again.
- Write precisely what needs to be done.
- Not in words, but mathematically.
- Like this: 
-\end_layout
-
-\begin_layout Proof
 Let 
-\begin_inset Formula $\{U_{i}\}_{i\in I}$
+\begin_inset Formula $\{O_{i}\}_{i\in I}$
 \end_inset
 
- be a collection of open subsets, so 
+ be a collection of 
+\emph on
+open subsets
+\emph default
+ with 
 \begin_inset Formula $I$
 \end_inset
 
- is an indexing set and for each 
-\begin_inset Formula $i\in I$
+ index set and
+\begin_inset Formula 
+\[
+\bigcup_{i\in I}O_{i}
+\]
+
 \end_inset
 
- we are given an open set 
-\begin_inset Formula $U_{i}\subseteq\mathbb{Q}$
+
+\end_layout
+
+\begin_layout Proof
+be the union of all 
+\begin_inset Formula $I$
+\end_inset
+
+ 
+\emph on
+open
+\emph default
+ 
+\emph on
+subsets
+\emph default
+.
+ If
+\begin_inset Formula 
+\[
+x\in\bigcup_{i\in I}O_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+then we note that 
+\begin_inset Formula $x\in O_{i}$
+\end_inset
+
+, namely 
+\begin_inset Formula $x$
+\end_inset
+
+ is in some specific 
+\emph on
+open subset.
+\end_layout
+
+\begin_layout Proof
+As 
+\begin_inset Formula $O_{i}$
+\end_inset
+
+ is 
+\emph on
+open
+\emph default
+, then by definition there exists an 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ such that
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+B_{\varepsilon}(x)\subseteq O_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+and it follows that
+\begin_inset Formula 
+\[
+B_{\varepsilon}(x)\subseteq\bigcup_{i\in I}O_{i}
+\]
+
 \end_inset
 
 .
- We need to show that 
-\begin_inset Formula $\bigcup_{i\in I}U_{i}$
+ This holds for 
+\emph on
+all
+\emph default
+ sets in 
+\begin_inset Formula $\{O_{i}\}_{i\in I}$
 \end_inset
 
- is open.
+, and so 
+\begin_inset Formula $\bigcup_{i\in I}O_{i}$
+\end_inset
+
+ is 
+\emph on
+open
+\emph default
+.
  
 \end_layout
 
 \begin_layout Proof
-Notice the precision.
- The naming of the given open sets.
- The clarity on what needs to be done.
- Now, continue.
- What does it mean, mathematically, that this union is open? What 
-\series bold
-needs
+*** 
+\end_layout
+
+\begin_layout Proof
+Alternatively, we can note that the 
 \emph on
- 
-\series default
+collection of open sets
 \emph default
-to be done?
+ 
+\begin_inset Formula $\{O_{i}\}_{i\in I}$
+\end_inset
+
+ is a 
+\emph on
+poset
+\emph default
+, which we can name 
+\begin_inset Formula $L$
+\end_inset
+
+, and has an ordering 
+\begin_inset Formula $\subseteq$
+\end_inset
+
+.
+ Now we can say that 
+\begin_inset Formula $\land=\cap$
+\end_inset
+
+ and 
+\begin_inset Formula $\lor=\cup$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+I'd like to follow this approach, but I think I need to justify that there
+ exists a unique 
+\begin_inset Formula $\subseteq$
+\end_inset
+
+-smallest 
+\begin_inset Formula $j\in\{O_{i}\}_{i\in I}$
+\end_inset
+
+, to make sure our 
+\begin_inset Formula $O_{i}\lor O_{j}$
+\end_inset
+
+ has a unique solution.
+ Our definition doesn't have any such guarantees.
+ 
 \end_layout
 
 \begin_layout Proof
@@ -661,9 +643,181 @@ to be done?
 \end_layout
 
 \begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+The 
+\emph on
+empty set
+\emph default
+ 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ is 
+\emph on
+open
+\emph default
+ as 
+\begin_inset Formula $\forall t\in\emptyset$
+\end_inset
+
+ results in no elements, and so is 
+\emph on
+vacuously true.
+
+\emph default
+ 
+\begin_inset Formula 
+\[
+\bigcup_{i\in\emptyset}O_{i}=\emptyset
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+For 
+\emph on
+finite intersections
+\emph default
+,
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+x\in\bigcap_{i\in I}^{n}O_{i}\implies x\in O_{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+where 
+\begin_inset Formula $O_{n}$
+\end_inset
+
+ represents the 
+\emph on
+smallest subset
+\emph default
+, then 
+\begin_inset Formula 
+\[
+\forall x\in\bigcap_{i\in I}^{n}O_{i}\exists r:B_{r}(x)\subseteq O_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+if we write 
+\begin_inset Formula $\{r_{i}\}_{i\in I}$
+\end_inset
+
+ to be the collection of radii 
+\begin_inset Formula $r$
+\end_inset
+
+, we can take 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\varepsilon:=min\{\{r_{i}\}_{i\in I}\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+to be the smallest, then 
+\emph on
+for all
+\emph default
+ 
+\begin_inset Formula $x$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+B_{\varepsilon}(x)\subseteq\bigcap_{i\in I}^{n}O_{i}
+\]
+
+\end_inset
+
+, which proves the 
+\emph on
+intersection of any finite number of open sets
+\emph default
+ in 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ is 
+\emph on
+open
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+If we have no open sets 
+\begin_inset Formula $\{\}_{i\in I}$
+\end_inset
+
+, then 
+\begin_inset Formula 
+\[
+\bigcap_{i\in\emptyset}O_{i}=\mathbb{Q}
+\]
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 These properties of open sets come from Definition 3 of subsets of rational
  numbers, as we can always provide a smaller 
-\begin_inset Formula $\epsilon$
+\begin_inset Formula $\varepsilon$
 \end_inset
 
  as needed.
