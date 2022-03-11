@@ -565,7 +565,11 @@ B_{\varepsilon}(x)\subseteq\bigcup_{i\in I}O_{i}
 \emph on
 all
 \emph default
- sets in 
+ 
+\emph on
+subsets
+\emph default
+ in 
 \begin_inset Formula $\{O_{i}\}_{i\in I}$
 \end_inset
 
@@ -594,7 +598,7 @@ collection of open sets
 \begin_inset Formula $\{O_{i}\}_{i\in I}$
 \end_inset
 
- is a 
+ can be made to be a 
 \emph on
 poset
 \emph default
@@ -602,7 +606,7 @@ poset
 \begin_inset Formula $L$
 \end_inset
 
-, and has an ordering 
+, given an ordering 
 \begin_inset Formula $\subseteq$
 \end_inset
 
@@ -634,7 +638,7 @@ I'd like to follow this approach, but I think I need to justify that there
 \end_inset
 
  has a unique solution.
- Our definition doesn't have any such guarantees.
+ My definition doesn't have any such guarantees.
  
 \end_layout
 
@@ -808,13 +812,6 @@ If we have no open sets
 \end_layout
 
 \begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 These properties of open sets come from Definition 3 of subsets of rational
  numbers, as we can always provide a smaller 
 \begin_inset Formula $\varepsilon$
@@ -841,6 +838,159 @@ Now if we write
  This has arbitrary joins and finite meets, as per the above definition,
  and so forms a lattice.
  
+\end_layout
+
+\begin_layout Theorem
+A subset of 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ is open if, and only if, it is a union of open intervals.
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $U\subseteq\mathbb{Q}$
+\end_inset
+
+ be open.
+ Then by definition for each 
+\begin_inset Formula $t\in U$
+\end_inset
+
+ there exists a positive rational 
+\begin_inset Formula $\varepsilon_{t}>0$
+\end_inset
+
+ (that depends on 
+\begin_inset Formula $t$
+\end_inset
+
+) such that
+\begin_inset Formula 
+\[
+B_{\varepsilon}(t)\subseteq U
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+and
+\begin_inset Formula 
+\[
+\bigcup_{t\in U}B_{\varepsilon}(t)=U
+\]
+
+\end_inset
+
+.
+ This result seems counter-intuitive, as it seems to suggest the union all
+ 
+\begin_inset Formula $t\in U$
+\end_inset
+
+ with the addition of some 
+\emph on
+ball
+\emph default
+ 
+\begin_inset Formula $B_{\varepsilon}(t)=\{x\in\mathbb{Q}\mid t-\varepsilon<x<t+\varepsilon\}$
+\end_inset
+
+, still results in 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ But at the very heart of this seeming contradiction, is the core feature
+ of an 
+\emph on
+open set
+\emph default
+: there is always room to contain the 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ error within the set.
+\end_layout
+
+\begin_layout Proof
+Now if we start with a collection of open intervals 
+\begin_inset Formula $\{B_{r_{i}}(x_{i})\}_{i\in I}$
+\end_inset
+
+, then the union
+\begin_inset Formula 
+\[
+\bigcup_{i\in I}B_{r_{i}}(x_{i})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+is also an open set.
+ This is easier to digest, as each 
+\begin_inset Formula $B_{r_{i}}(x_{i})$
+\end_inset
+
+ is open, and the union is just the largest set that represents all of them
+ in which the interval bounds are the minimum and maximum of all intervals
+ in 
+\begin_inset Formula $B_{r_{i}}(x_{i})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+** If I can form a poset from this collection then I would write:
+\end_layout
+
+\begin_layout Proof
+If we write 
+\begin_inset Formula $\Omega(U)$
+\end_inset
+
+ to be the collection of open subsets in 
+\begin_inset Formula $U$
+\end_inset
+
+, and if we order this by inclusion 
+\begin_inset Formula $\subseteq$
+\end_inset
+
+, then we have a powerset 
+\begin_inset Formula $\mathcal{P}=(\Omega(U),\subseteq)$
+\end_inset
+
+.
+ The union of all open balls is then equivalent to the join of 
+\begin_inset Formula $\mathcal{P}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\bigcup_{i\in I}B_{r_{i}}(x_{i})=\bigvee\mathcal{P}
+\]
+
+\end_inset
+
+.
+ From here I'd like to say the join is somehow open.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \end_body
