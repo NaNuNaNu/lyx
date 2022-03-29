@@ -1,0 +1,519 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Definition
+The set 
+\begin_inset Formula $\mathcal{I}$
+\end_inset
+
+ is defined to be all the intervals of rational numbers 
+\begin_inset Formula $(a,b)$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $a<b$
+\end_inset
+
+.
+ A relation 
+\begin_inset Formula $\sqsubseteq$
+\end_inset
+
+ is defined so that if 
+\begin_inset Formula $(a,b)\sqsubseteq(c,d)$
+\end_inset
+
+ then 
+\begin_inset Formula $c\le a$
+\end_inset
+
+ and 
+\begin_inset Formula $b\le d$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Definition
+A non strict partial ordering is defined by:
+\end_layout
+
+\begin_layout Itemize
+Reflexivity: 
+\begin_inset Formula $(a,b)\sqsubseteq(a,b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Antisymmetry: If 
+\begin_inset Formula $(a,b)\sqsubseteq(c,d)$
+\end_inset
+
+ and 
+\begin_inset Formula $(c,d)\sqsubseteq(a,b)$
+\end_inset
+
+ then 
+\begin_inset Formula $(a,b)=(c,d)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Transitivity: If 
+\begin_inset Formula $(a,b)\sqsubseteq(c,d)$
+\end_inset
+
+ and 
+\begin_inset Formula $(c,d)\sqsubseteq(e,f)$
+\end_inset
+
+ then 
+\begin_inset Formula $(a,b)\sqsubseteq(e,f)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+The set 
+\begin_inset Formula $\mathcal{I}$
+\end_inset
+
+ with 
+\begin_inset Formula $\sqsubseteq$
+\end_inset
+
+ is a poset.
+\end_layout
+
+\begin_layout Proof
+As 
+\begin_inset Formula $\sqsubseteq$
+\end_inset
+
+ is 
+\emph on
+reflexitive
+\emph default
+, 
+\emph on
+antisymmetric
+\emph default
+ and 
+\emph on
+transitive
+\emph default
+, then it is an ordering, and therefore 
+\begin_inset Formula $(\mathcal{I},\sqsubseteq)$
+\end_inset
+
+ is a 
+\emph on
+poset
+\emph default
+.
+\end_layout
+
+\begin_layout Definition
+A poset 
+\begin_inset Formula $(\mathcal{L},\le)$
+\end_inset
+
+ is called a 
+\emph on
+lattice
+\emph default
+ if for any two-element subset 
+\begin_inset Formula $\{a,b\}\subseteq\mathcal{L}$
+\end_inset
+
+ have both 
+\emph on
+joins
+\emph default
+ 
+\begin_inset Formula $a\lor b$
+\end_inset
+
+ and 
+\emph on
+meets
+\emph default
+ 
+\begin_inset Formula $a\land b$
+\end_inset
+
+.
+ A lattice is said to be a 
+\emph on
+complete lattice
+\emph default
+ if every subset 
+\begin_inset Formula $S\subseteq\mathcal{L}$
+\end_inset
+
+ has both all meets 
+\begin_inset Formula $\bigwedge S$
+\end_inset
+
+ and all joins 
+\begin_inset Formula $\bigvee S$
+\end_inset
+
+.
+ A lattice where there are finite meets, all joins and where 
+\emph on
+meets distribute over all joins
+\emph default
+:
+\begin_inset Formula 
+\[
+a\wedge(b\vee c)=(a\wedge b)\vee(a\wedge c)
+\]
+
+\end_inset
+
+or more precisely, for all 
+\begin_inset Formula $x,\{y_{i}\}_{i}$
+\end_inset
+
+in 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+x\wedge(\bigvee_{i}y_{i})\le\bigvee_{i}(x\wedge y_{i})
+\]
+
+\end_inset
+
+is said to be a 
+\emph on
+frame
+\emph default
+.
+\end_layout
+
+\begin_layout Lemma
+If 
+\begin_inset Formula $S_{i}=\{(a_{i},b_{i})\}_{i\in I}$
+\end_inset
+
+ where 
+\begin_inset Formula $I$
+\end_inset
+
+ is an index set, 
+\begin_inset Formula $a_{i}<b_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $(a_{i},b_{i})\in\mathcal{I}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\bigwedge_{i\in I}S_{i}=(max\{a_{i}\},min\{b_{i}\})_{i\in I}=(\bigvee_{i\in I}a_{i},\bigwedge_{i\in I}b_{i})
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\bigvee_{i\in I}S_{i}=(min\{a_{i}\},max\{b_{i}\})=(\bigwedge_{i\in I}a,\bigvee_{i\in I}b_{i})
+\]
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $S_{1},S_{2}\in\mathcal{I}$
+\end_inset
+
+ so that 
+\begin_inset Formula $S_{1}=(a,b)$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{2}=(c,d)$
+\end_inset
+
+.
+ We can see that for our sets 
+\begin_inset Formula $S_{1},S_{2}$
+\end_inset
+
+ the possible situations range from 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+and 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ overlapping fully, to 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ having no overlap.
+ So lets cover these possibilities.
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $S_{1}\sqsubseteq S_{2}$
+\end_inset
+
+ then we have 
+\begin_inset Formula 
+\[
+S_{1}\wedge S_{2}=(max\{a,c\},min\{b,d\})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+but as 
+\begin_inset Formula $c\le a$
+\end_inset
+
+ and 
+\begin_inset Formula $b\le d$
+\end_inset
+
+ we have
+\begin_inset Formula 
+\[
+S_{1}\wedge S_{2}=(a,b)=S_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+which is what we expected.
+\end_layout
+
+\begin_layout Proof
+Similarly we have 
+\begin_inset Formula 
+\[
+S_{1}\vee S_{2}=(c,d)=S_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+which again aligns with our expectations.
+\end_layout
+
+\begin_layout Proof
+On the other hand if 
+\begin_inset Formula $b<c$
+\end_inset
+
+ (meaning there is no overlap) then we have
+\begin_inset Formula 
+\[
+S_{1}\wedge S_{2}=(max\{a,c\},min\{b,d\})=(c,b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+but as 
+\begin_inset Formula $b<c$
+\end_inset
+
+ then 
+\begin_inset Formula 
+\[
+(c,b)=(0,0)\notin\mathcal{I}
+\]
+
+\end_inset
+
+ meaning there is no common lower interval.
+ 
+\end_layout
+
+\begin_layout Proof
+Now the join 
+\begin_inset Formula 
+\[
+S_{1}\vee S_{2}=(min\{a,c\},max\{b,d\})=(a,d)
+\]
+
+\end_inset
+
+ is the largest interval that contains both 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proposition
+So is 
+\begin_inset Formula $(\mathcal{I},\sqsubseteq)$
+\end_inset
+
+ a 
+\emph on
+lattice?
+\emph default
+ And if so is it a 
+\emph on
+complete lattice?
+\emph default
+ Or even a 
+\emph on
+frame
+\emph default
+? We can see that our poset 
+\begin_inset Formula $(\mathcal{I},\sqsubseteq)$
+\end_inset
+
+, consits of sub-intervals of 
+\begin_inset Formula $\mathcal{I}$
+\end_inset
+
+ that may or may not overlap eachother.
+ From 
+\series bold
+Lemma 4.
+
+\series default
+ we can see that if our intervals overlap then they have a 
+\emph on
+meet
+\emph default
+, and regardless of if they do or don't they will still have a 
+\emph on
+join
+\emph default
+.
+ 
+\end_layout
+
+\end_body
+\end_document
