@@ -1,0 +1,264 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Samuel Lloyd-Lindholm} \\ \vspace{1pt}
+    Surrey, United Kingdom \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ +44 (0)737 9985 422 ~ \href{mailto:sam@lllind.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{sam@lllind.com}} ~ 
+    \href{http://www.linkedin.com/in/samlllind}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/samlllind}}  ~
+    \href{https://github.com/NaNuNaNu}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/NaNuNaNu}}
+    \vspace{-8pt}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {Portsmouth University}{2021 -- Current}
+      {PhD Mathematics}{Portsmouth, UK}
+    \resumeSubheading
+      {MITx (Remote)}{2019}
+      {Data Analysis in Social Science (Certificate)}{Remote}
+    \resumeSubheading
+      {Imperial College (Remote)}{2018}
+      {Mathematics for Machine Learning (Certificate)}{Remote}
+    \resumeSubheading
+      {Cranfield University}{2006 -- 2007}
+      {MSc Astronautics and Space Engineering (No award)}{Cranfield, UK}
+    \resumeSubheading
+      {Queen Mary, University of London}{2002 -- 2005}
+      {BSc Theoretical Physics (2.1)}{London, UK}
+    
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+  
+  \resumeSubheading
+      {Lloyd-Lindholm Ltd}{2021 -- Current}
+      {Director}{London, UK}
+      \resumeItemListStart
+        \resumeItem{Independent consulting on software engineering and mathematical methods for trading systems.}
+        \resumeItem{General software development, Go-lang, Python, back-end platforms, low-latency and high frequency systems.}
+        \resumeItem{Trading strategy development and analysis.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Syndicate}{2014 -- Current}
+      {Founding Member \& Partner}{London, UK}
+      \resumeItemListStart
+        \resumeItem{Leading platform development \& design process of a distributed low latency platform for automated trading.}
+        \resumeItem{Software development of key systems including machine learning system integration, protocol design, low latency \& highly parallel systems and critical trading services. Documentation and maintenance of our software stack.}
+        \resumeItem{Strategic business management including administrative, financial, legal and cross-jurisdictional matters.}
+        \resumeItem{Mentoring of junior team members.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {OpenXO}{2013 -- 2014}
+      {Platform Lead \& Employee Nr.1}{London, UK}
+      \resumeItemListStart
+        \resumeItem{In charge of platform development.}
+        \resumeItem{Design, architecture and hands on work building the core platform.}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+      {Betfair}{2010 -- 2013}
+      {Platform Engineer}{London, UK}
+      \resumeItemListStart
+        \resumeItem{Part of the core exchange engineering team tasked with developing and maintaining the betting exchange platform.}
+        \resumeItem{Responsible for supporting business critical components also during out of hours.}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+      {ITT-Visual Information Solutions}{2007 -- 2010}
+      {Consultant \& Developer}{Bracknell, UK}
+      \resumeItemListStart
+        \resumeItem{Consulting and developing custom solutions in image processing for defence, scientific, environmental and medical applications.}
+        \resumeItem{Sales work as part of consultancy process.}
+        \resumeItem{Presenting seminars on technical topics and running workshops on programming techniques.}
+    \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+    
+        \resumeProjectHeading
+              {\textbf{Order book trading system} $|$ \emph{Golang, Python}}{2021}
+              \resumeItemListStart
+                \resumeItem{Golang based trading gateway platform for interacting with trading venues.}
+                \resumeItem{Analysis of order book level data.}
+                \resumeItem{Foundational algorithmic design based on category theory and lattice theory.}
+              \resumeItemListEnd
+              \vspace{-13pt}
+    
+        \resumeProjectHeading
+          {\textbf{Esports market making bot} $|$ \emph{Golang, Python, SQL, NodeJS, AWS}}{2021}
+          \resumeItemListStart
+            \resumeItem{Web scraping and API integration to collect live data of esports events and market prices.}
+            \resumeItem{Research into automated market making.}
+            \resumeItem{Central event storage system in PostgresQL.}
+            \resumeItem{System deployment on AWS including DB, service nodes, front end console and downtime warning elements.}
+            \resumeItem{Basic market making strategy analysis using Python.}
+            \resumeItem{Golang core service elements tasked with making real money trading decisions.}
+          \resumeItemListEnd
+          \vspace{-13pt}
+          
+      \resumeProjectHeading
+          {\textbf{Crypto currency feed} $|$ \emph{Golang, NodeJS, SQL, HTML, AWS}}{2019}
+          \resumeItemListStart
+            \resumeItem{Created a Crypto feed aggregator that consumed many sources of Crypto price \& trade volume data.}
+            \resumeItem{Data was stored in a PostgresQL database and queryable through he platform via exposed API calls.}
+            \resumeItem{Basic Python analysis of the price/vol data.}
+          \resumeItemListEnd 
+          \vspace{-13pt}
+          \resumeProjectHeading
+          {\textbf{Event Mapping system} $|$ \emph{Golang, VueJs, SQL, AWS}}{2015}
+          \resumeItemListStart
+            \resumeItem{Mapping of sports events from disparate sources into an internal representation.}
+            \resumeItem{Storage in PostgresQL database.}
+            \resumeItem{Front end work for interacting with the data.}
+          \resumeItemListEnd 
+    \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Golang, Python, Java, SQL, JS} \\
+     \textbf{Technologies/Frameworks}{: Unix, AWS, Git/hub, VIM, LaTeX} \\
+     \textbf{General}{: Research, Documentation, Mathematics, Software Architecture \& Design} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+\end{document}

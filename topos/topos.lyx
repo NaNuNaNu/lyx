@@ -1,0 +1,518 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\usepackage{quiver}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+From 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebras to Topos
+\end_layout
+
+\begin_layout Abstract
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra is a foundational aspect of measure theory and etc.
+ etc.
+ ...
+\end_layout
+
+\begin_layout Section
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebras
+\end_layout
+
+\begin_layout Standard
+The motivation for a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra comes from the need of a measure in measure theory to set the question
+ 
+\begin_inset Quotes eld
+\end_inset
+
+is my value in this set?
+\begin_inset Quotes erd
+\end_inset
+
+.
+ At this point the measure needs to be able to answer this question based
+ on the logic given.
+ For Boolean logic the measure must be able to tell if the value is or is
+ not and element of the set.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $X$
+\end_inset
+
+ is a set and 
+\begin_inset Formula $P(X)$
+\end_inset
+
+ is the power set.
+ A set 
+\begin_inset Formula $S\subseteq P(X)$
+\end_inset
+
+ is an 
+\emph on
+Algebra
+\emph default
+ over 
+\begin_inset Formula $X$
+\end_inset
+
+ if
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $X\in S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall A,B\in S\implies A\backslash B\in S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula $S$
+\end_inset
+
+ is an Algebra over 
+\begin_inset Formula $X$
+\end_inset
+
+ if and only if
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $X\in S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall A\in S\implies A^{c}\in S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall A,B\in S\implies A\cap B\in S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Property 1 is identical to Definition 1.
+ 
+\begin_inset Formula $\forall A\in S$
+\end_inset
+
+ we have 
+\begin_inset Formula $A^{c}=X\backslash A\in S$
+\end_inset
+
+, which is property 2.
+ Using this, we can then write, 
+\begin_inset Formula $\forall B\in S$
+\end_inset
+
+, 
+\begin_inset Formula $B^{c}\in S\implies A\backslash B^{c}=A\cap B\in S$
+\end_inset
+
+, which is property 3.
+ In the other direction we have 
+\begin_inset Formula $\forall A,B\in S$
+\end_inset
+
+ (and using property 2), 
+\begin_inset Formula $B^{c}\in S$
+\end_inset
+
+, and (using property 3) we write 
+\begin_inset Formula $A\cap B^{c}\in S$
+\end_inset
+
+, which is the same as 
+\begin_inset Formula $A\backslash B\in S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra is an extension of an Algebra in the following way.
+\end_layout
+
+\begin_layout Definition
+A set 
+\begin_inset Formula $T\in P(X)$
+\end_inset
+
+ is a 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra over 
+\begin_inset Formula $X$
+\end_inset
+
+ if:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $T$
+\end_inset
+
+ is an Algebra.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall\{A_{n}\}_{n\in\mathbb{N}}\subset T\implies\cup_{n\in\mathbb{N}}A_{n}\in T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra is therefore a Algebra that is closed under countable unions.
+\end_layout
+
+\begin_layout Standard
+This definition is what is generally displayed in measure theory and related
+ discussions of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+-algebra.
+ Another way of thinking about the definitions is that the membership operator
+ (
+\begin_inset Formula $\in$
+\end_inset
+
+) is a function
+\begin_inset Formula 
+\[
+\in:Set\to Set
+\]
+
+\end_inset
+
+that maps an input set to a truth value set.
+ So this means that the category 
+\begin_inset Formula $\mathbf{Set}$
+\end_inset
+
+ plays a central part in the construction of measurements.
+ Translating the set theoretic definitions to category theory starts with
+ noting that 
+\begin_inset Formula $X\in ob(\mathbf{Set})$
+\end_inset
+
+, and that the power set is given by a function 
+\begin_inset Formula $P:Set\to Set$
+\end_inset
+
+.
+ This already leads us into a difficult position, as the very notion of
+ a function holds some core set theoretic properties.
+ A function 
+\begin_inset Formula $f:A\to B$
+\end_inset
+
+, defined as 
+\begin_inset Formula $\forall a\in A.\exists!b\in B\:s.t.\:f(a)=b$
+\end_inset
+
+.
+ This definition of a function leaves no wiggle room, but insists that every
+ input must have an output.
+ Allowing for a slightly more flexible version of a function, leads us the
+ the partial function, 
+\begin_inset Formula $f_{p}:A\rightharpoonup B$
+\end_inset
+
+, that allows for the co-domain to be undefined, such as the following:
+\begin_inset Formula 
+\[
+f_{p}(a)=\begin{cases}
+b & a\ne0\\
+ & a=0
+\end{cases}
+\]
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Partial functions live in the category of partial sets, 
+\begin_inset Formula $\boldsymbol{Set_{part}}$
+\end_inset
+
+, and do not behave the same way as 
+\begin_inset Formula $\boldsymbol{Set}$
+\end_inset
+
+.
+ In the category 
+\begin_inset Formula $\boldsymbol{\mathbf{Set}}$
+\end_inset
+
+ an initial and terminal object 
+\begin_inset Formula $*$
+\end_inset
+
+, for morphisms 
+\begin_inset Formula $*\to C$
+\end_inset
+
+ and 
+\begin_inset Formula $C\to*$
+\end_inset
+
+ respectively, are both singleton sets, namely any set containing a single
+ entry.
+ However in the category 
+\begin_inset Formula $\boldsymbol{Set_{part}}$
+\end_inset
+
+ the initial and terminal objects are empty sets, 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+.
+ This distinction in behavior is present in the dual of the category of
+ 
+\begin_inset Formula $\boldsymbol{Set_{part}}$
+\end_inset
+
+, known as 
+\series bold
+
+\begin_inset Formula $\boldsymbol{Set_{non-det}}$
+\end_inset
+
+
+\series default
+.
+ These varieties of 
+\begin_inset Formula $\mathbf{Set}$
+\end_inset
+
+ are depicted below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}[column sep=scriptsize] 	& {
+\backslash
+mathbf{Set}} 
+\backslash
+
+\backslash
+ 	{
+\backslash
+mathbf{Set_{part}}} && {
+\backslash
+mathbf{Set_{non-det}}} 
+\backslash
+
+\backslash
+ 	& {
+\backslash
+mathbf{Set_{non-det-part}}} 	
+\backslash
+arrow[from=1-2, to=2-1] 	
+\backslash
+arrow[from=1-2, to=2-3] 	
+\backslash
+arrow[from=2-3, to=3-2] 	
+\backslash
+arrow[from=2-1, to=3-2] 
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The category of 
+\begin_inset Formula $\mathbf{Set_{non-det-part}}$
+\end_inset
+
+ is equivalent to the category of relations 
+\begin_inset Formula $\mathbf{Rel}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+**How?? Lets find out and give some more details.**
+\end_layout
+
+\begin_layout Standard
+In the category 
+\begin_inset Formula $\mathbf{Rel}$
+\end_inset
+
+, a function 
+\begin_inset Formula $f:A\nrightarrow B$
+\end_inset
+
+, is defined as 
+\begin_inset Formula $\forall a\in A:f(a)\subseteq B$
+\end_inset
+
+, and the inverse function 
+\begin_inset Formula $f^{*}:B\nrightarrow A$
+\end_inset
+
+ as 
+\begin_inset Formula $\forall b\in B:f^{*}(b)\subseteq A$
+\end_inset
+
+.
+ This means the category of relations is self-dual, i.e.
+ 
+\begin_inset Formula $\mathbf{Rel}\to\mathbf{Rel}^{op}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document

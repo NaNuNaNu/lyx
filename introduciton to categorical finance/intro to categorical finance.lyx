@@ -1,0 +1,1213 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Anatomy of a typical financial model
+\end_layout
+
+\begin_layout Standard
+** This probably needs to go in a second paper but is here as a reminder
+ to talk about things in relation of financial models.
+ **
+\end_layout
+
+\begin_layout Enumerate
+Use data analysis & exploration of statistical features to identify candidate
+ models.
+\end_layout
+
+\begin_layout Enumerate
+Estimate parameters for the candidate model.
+\end_layout
+
+\begin_layout Enumerate
+Check model feasibility through examination of residuals.
+\end_layout
+
+\begin_layout Enumerate
+Validate model with out-of-sample data.
+\end_layout
+
+\begin_layout Standard
+A standard practice is to simplify the complex nature of markets into a
+ more palatable form, such as time series of returns.
+ [time series log returns formula]
+\end_layout
+
+\begin_layout Standard
+The next step is to hone in on some features that could be used to explain
+ the behavior of this simplified view.
+\end_layout
+
+\begin_layout Standard
+These features are then applied into a mathematical model that explain or
+ forcast the behavior of the system.
+ [time series forcasting using cointegration for pairs trading]
+\end_layout
+
+\begin_layout Standard
+** Look at the entropy of this process.
+ We should have something that starts at a OB and ends with a vector of
+ AR returns.
+ It is likely that this procedure has a large loss of information.
+ **
+\end_layout
+
+\begin_layout Section
+Trading as a category
+\end_layout
+
+\begin_layout Standard
+In this section we introduce the concept of trading as a categorical concept.
+ ** expand on this when we have more **.
+\end_layout
+
+\begin_layout Subsection
+Trading Positions
+\end_layout
+
+\begin_layout Standard
+We start with a primitive notion of a trading position
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\psi:[0,\infty]\times[0,\infty]\to\{\top,\bot\}
+\]
+
+\end_inset
+
+ as a willingness to exchange a quantity 
+\begin_inset Formula $q_{b}$
+\end_inset
+
+ of asset 
+\begin_inset Formula $b$
+\end_inset
+
+ for 
+\begin_inset Formula $q_{a}$
+\end_inset
+
+ of asset 
+\begin_inset Formula $a$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\psi(q_{a},q_{b})=\begin{cases}
+\top & \mathrm{trader\:\boldsymbol{agrees}\,to\,swap\,}q_{a}\mathrm{for\,q_{b}}\\
+\bot & \mathrm{trader\,is\,\boldsymbol{not}\,\boldsymbol{willing}\,to\,make\,the\,swap}
+\end{cases}
+\]
+
+\end_inset
+
+.
+ An order book can be thought of as a collection of trading positions so
+ that the ordering
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\psi_{1}(q_{1},q_{2})\ge\psi_{2}(q_{3},q_{4})\quad\implies\frac{q_{1}}{q_{2}}\ge\frac{q_{3}}{q_{4}}
+\]
+
+\end_inset
+
+ for buyers, and
+\begin_inset Formula 
+\[
+\psi_{1}(q_{1},q_{2})\le\psi_{2}(q_{3},q_{4})\quad\implies\frac{q_{1}}{q_{2}}\le\frac{q_{3}}{q_{4}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for sellers implies an ordering by price.
+ However our trading position is able to provide more and allows for a compariso
+n of quantities directly
+\begin_inset Formula 
+\begin{equation}
+\psi_{1}\ge\psi_{2}\iff\exists q_{1},q_{2}\,.\,\psi_{1}(q_{1},q_{2})=\top\quad\mathrm{and}\quad\psi_{2}(q_{1},q_{2})=\bot\label{eq:1}
+\end{equation}
+
+\end_inset
+
+.
+ This means that two trading positions may be price equivalent but they
+ can still be compared relative to their exchangeable quantities.
+\end_layout
+
+\begin_layout Theorem
+A trade executes between commutative trading positions 
+\begin_inset Formula $\psi_{A}$
+\end_inset
+
+, 
+\begin_inset Formula $\psi_{B}$
+\end_inset
+
+ if there exists a quantity that satisfy both trading positions.
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $\psi_{1}:A\to B$
+\end_inset
+
+ admit a trading position at 
+\begin_inset Formula $\psi_{1}(a_{1},b_{1})=\top$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{2}:B\to A$
+\end_inset
+
+ similarly at 
+\begin_inset Formula $\psi_{2}(b_{2},a_{2})=\top$
+\end_inset
+
+, where 
+\begin_inset Formula $a_{1},a_{2}\in|A|$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{1},b_{2}\in|B|$
+\end_inset
+
+ are the relative quantities of assets 
+\begin_inset Formula $A,B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+If we can find 
+\begin_inset Formula $a\in|A|$
+\end_inset
+
+ and 
+\begin_inset Formula $b\in|B|$
+\end_inset
+
+ such that 
+\begin_inset Formula 
+\[
+a\ge a_{1}\quad\mathrm{and}\quad a\le a_{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+b\ge b_{2}\quad\mathrm{and}\quad b\le b_{1}
+\]
+
+\end_inset
+
+ which results in
+\begin_inset Formula 
+\[
+\psi_{1}(a,b)\ge\psi_{1}(a_{1},b_{1})\qquad\psi_{2}(b,a)\le\psi_{2}(b_{2},a_{2})
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\psi_{1}(a,b)=\top\qquad\psi_{2}(b,a)=\top
+\]
+
+\end_inset
+
+or in other words a trade being executed.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\psi$
+\end_inset
+
+ example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+buy amount
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sell amount
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\psi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\top$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\top$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\top$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\bot$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\top$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\bot$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Table 1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Table 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows an example of a buy trading position, which reinforces the notion
+ that 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is a both sensitive to price and quantity.
+ 
+\end_layout
+
+\begin_layout Standard
+Now lets consider combining trading positions.
+ We'll introduce a shorthand asset quantity parameter 
+\begin_inset Formula $\alpha=(a_{1},a_{2})$
+\end_inset
+
+ that describes a pair of quantities, 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+ to buy and 
+\begin_inset Formula $a_{2}$
+\end_inset
+
+ to sell.
+ This is used to describe a trading position
+\begin_inset Formula 
+\[
+\alpha\mapsto\psi_{\alpha}\implies\psi(a_{1},a_{2})=\top
+\]
+
+\end_inset
+
+ .
+ We can then say if two quantities 
+\begin_inset Formula $s_{1},s_{2}$
+\end_inset
+
+ are accepted by the trading position 
+\begin_inset Formula $\psi_{\alpha}$
+\end_inset
+
+ that implies the price is better or equal to 
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\psi_{\alpha}(s_{1},s_{2})=\top\implies\frac{s_{1}}{s_{2}}\ge\alpha
+\]
+
+\end_inset
+
+.
+ Given a second trading position 
+\begin_inset Formula $\psi_{\beta}$
+\end_inset
+
+ we can write 
+\begin_inset Formula 
+\[
+\psi_{\alpha+\beta}=\psi_{\alpha}+\psi_{\beta}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\begin_inset Formula 
+\[
+\psi_{\alpha+\beta}(s_{1},s_{2})=\top\implies\frac{s_{1}}{s_{2}}\ge\alpha+\beta
+\]
+
+\end_inset
+
+.
+ Suppose we split appart a quantity 
+\begin_inset Formula $s_{2}=s_{2}'+s_{2}''$
+\end_inset
+
+ then we can see that
+\begin_inset Formula 
+\[
+\psi_{\alpha}(s_{1},s_{2}')=\top\qquad\mathrm{and}\qquad\psi_{\beta}(s_{1},s_{2}'')=\top
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+as 
+\begin_inset Formula $s_{2}'<s_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{2}''<s_{2}$
+\end_inset
+
+.
+ However the same is not true for 
+\begin_inset Formula $s_{1}=s_{1}'+s_{1}''$
+\end_inset
+
+ as 
+\begin_inset Formula 
+\[
+\psi_{\alpha}(s_{1}',s_{2})\le\top\qquad\mathrm{and}\qquad\psi_{\beta}(s_{1}'',s_{2})\le\top
+\]
+
+\end_inset
+
+.
+ ** does this make sense?? **
+\end_layout
+
+\begin_layout Definition
+The combination of two trading positions 
+\begin_inset Formula $\psi_{\alpha}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{\beta}$
+\end_inset
+
+ is given by 
+\begin_inset Formula 
+\[
+\psi_{\alpha}+\psi_{\beta}:[0,\infty]\times[0,\infty]^{op}\to\mathscr{B}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+where
+\begin_inset Formula 
+\[
+\psi_{\alpha}+\psi_{\beta}(s_{1},s_{2})=\top
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+if there exists component quantities that result in trading positions
+\begin_inset Formula 
+\begin{align*}
+\exists s_{1}=s_{1}'+s_{1}''\;.\;\psi_{\alpha}(s_{1}',s_{2}')=\top\\
+\exists s_{2}=s_{2}'+s_{2}''\;.\;\psi_{\beta}(s_{1}'',s_{2}'')=\top
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using this combination we can validate that trading positions behave as
+ expected.
+ 
+\end_layout
+
+\begin_layout Example
+Lets look at a trading position where one quantity is zero, 
+\begin_inset Formula $\psi_{0}(0,s_{2})=\top$
+\end_inset
+
+.
+ So if we combine this trading position with a second one 
+\begin_inset Formula $\psi_{1}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\psi_{0}(0,s_{2})+\psi_{1}(s_{1},s_{2})=\top\implies\exists s_{1}=s_{1}'+s_{1}''\;.\;\psi_{1}(s_{1}',s_{2}')=\top
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+but seeing as 
+\begin_inset Formula $s_{1}\in[0,\infty]$
+\end_inset
+
+, the only possible values for 
+\begin_inset Formula $s_{1}'=s_{1}''=0$
+\end_inset
+
+, meaning that 
+\begin_inset Formula $\psi_{1}(s_{1}',s_{2}')=\top$
+\end_inset
+
+ for any 
+\begin_inset Formula $s_{2}'$
+\end_inset
+
+.
+ In other words, we can always give things away for free.
+\end_layout
+
+\begin_layout Example
+On the other extreme let's try to get something for free.
+ Lets assume 
+\begin_inset Formula $\psi_{0}(s_{1},0)=\top$
+\end_inset
+
+.
+ In this case we need to find 
+\begin_inset Formula $\exists s_{2}=s_{2}'+s_{2}''=0$
+\end_inset
+
+ and again the only option is to have 
+\begin_inset Formula $s_{2}'=s_{2}''=0$
+\end_inset
+
+.
+ And so we get 
+\begin_inset Formula $\psi_{1}(s_{1}',0)=\bot$
+\end_inset
+
+ for 
+\begin_inset Formula $s_{1}'>0$
+\end_inset
+
+, meaning we cannot give nothing unless we agree to get nothing in return.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So far we have highlighted trivial algebraic properties of trading positions
+ but now we introduce a categorical view of trading positions.
+ We will use standard categorical notation for composition 
+\begin_inset Formula $\psi_{1}\circ\psi_{2}(a,b)=\top$
+\end_inset
+
+ to mean the same as 
+\begin_inset Formula $\psi_{2}(b,\psi_{1}(a,b))$
+\end_inset
+
+.
+ The composition of trading positions becomes a meet (or infimum) of quantities
+ that share a common buy and sell amount 
+\begin_inset Formula 
+\[
+\psi_{1}\circ\psi_{2}(a,b)=\bigvee_{s}\psi_{1}(a,s)\wedge\psi_{2}(s,b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+giving us a categorical version of our trading position comparison equation
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+\psi_{1}\circ\psi_{2}(a,b)=\top\iff\exists s\;.\;\psi_{1}(a,s)=\top\;\wedge\;\psi_{2}(s,b)=\top
+\]
+
+\end_inset
+
+.
+ Now lets look closer at our definition of a trading position.
+ We can define a category of positions 
+\begin_inset Formula $\mathbf{Pos}$
+\end_inset
+
+ with objects as asset positions 
+\begin_inset Formula $\mathbf{Pos}\in P_{A},P_{B}$
+\end_inset
+
+ and arrows as trading positions 
+\begin_inset Formula $\psi$
+\end_inset
+
+.
+ Here 
+\begin_inset Formula $P_{A}=(a,b)$
+\end_inset
+
+, 
+\begin_inset Formula $P_{B}=(b,a)$
+\end_inset
+
+ are the asset positions, with quantities 
+\begin_inset Formula $a\in A$
+\end_inset
+
+, 
+\begin_inset Formula $b\in B$
+\end_inset
+
+, such that 
+\begin_inset Formula $\psi_{P_{A}}=\top$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{P_{B}}=\top$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Seeing as trading positions exhibit a contravariant relation along 
+\begin_inset Formula $P_{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{B}$
+\end_inset
+
+, a trading position 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is a profunctor 
+\begin_inset Formula 
+\[
+\psi:P_{A}\nrightarrow P_{B}
+\]
+
+\end_inset
+
+, more precisely this is a Cartesian product of asset positions to a set
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\psi:P_{B}^{op}\times P_{A}\to\mathscr{B}\label{eq: 2}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathscr{B}=\{\bot,\top\}$
+\end_inset
+
+ with ordering 
+\begin_inset Formula $\bot\le\top$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Quantales
+\end_layout
+
+\begin_layout Definition
+A quantale 
+\begin_inset Formula $Q$
+\end_inset
+
+ is a complete lattice 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+, that admit joins 
+\begin_inset Formula $\bigvee$
+\end_inset
+
+ and meets 
+\begin_inset Formula $\bigwedge$
+\end_inset
+
+ and has an associative binary operator 
+\begin_inset Formula $\otimes:\mathcal{L}\times\mathcal{L}\to\mathcal{L}$
+\end_inset
+
+, that commutes with joins: 
+\begin_inset Formula $x\otimes(\bigvee S)=\bigvee(x\otimes S)$
+\end_inset
+
+ and 
+\begin_inset Formula $(\bigvee S)\otimes x=\bigvee(S\otimes x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In [** ref diagrams of quantales I.Weiss **] the notion of a 
+\emph on
+Lawvere Quantale
+\emph default
+ is further developed as a category 
+\begin_inset Formula $Q$
+\end_inset
+
+ with objects 
+\begin_inset Formula $\mathrm{ob}(Q)=[0,\infty]$
+\end_inset
+
+ and arrows 
+\begin_inset Formula $x\to y$
+\end_inset
+
+ where 
+\begin_inset Formula $x\ge y$
+\end_inset
+
+.
+ We have developed the category 
+\begin_inset Formula $\mathbf{Prof(Pos)}$
+\end_inset
+
+ as a candidate for trading positions.
+ It is a good category, but it could be better.
+ We can improve on it by noting that asset positions are equivalent to 
+\begin_inset Formula $[0,\infty]$
+\end_inset
+
+ in the following way
+\begin_inset Formula 
+\[
+P_{A}=P_{B}=Q^{op}=([0,\infty]^{op})^{op}=[0,\infty]
+\]
+
+\end_inset
+
+.
+ The 
+\begin_inset Formula $Q^{op}$
+\end_inset
+
+ comes from the need to describe our arrows in the opposite direction as
+ the 
+\emph on
+Lawvere Quantale
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+This means we can form our trading position (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq: 2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) using 
+\begin_inset Formula $[0,\infty]$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\psi:[0,\infty]^{op}\times[0,\infty]\to\mathscr{B}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+The quantale 
+\begin_inset Formula $Q=(\mathcal{L},\otimes,I)$
+\end_inset
+
+ with joins 
+\begin_inset Formula $\bigvee$
+\end_inset
+
+ form a category of trading positions 
+\begin_inset Formula $\mathbf{Qnt(Pos)}$
+\end_inset
+
+ where trading positions 
+\begin_inset Formula $\psi_{i}$
+\end_inset
+
+ are the hom-set 
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula 
+\[
+\psi_{i}\in\mathbf{Qnt}(Q,Q)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+and an individual trading position 
+\begin_inset Formula $\psi$
+\end_inset
+
+ is the arrow between quantales
+\begin_inset Formula 
+\[
+\psi:Q\to Q
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The above definition provides to following behaviors:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\psi(I)=I$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\psi(a\otimes b)=\psi(a)\otimes\psi(b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\psi(\bigvee_{s\in S}s)=\bigvee_{s\in S}\psi(s)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\mathbf{Tra}$
+\end_inset
+
+ is a category enriched in 
+\begin_inset Formula $\mathbf{Qnt}$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
