@@ -1,0 +1,757 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsart
+\begin_preamble
+\usepackage{tikz-cd}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Ex1 in Simmons Intro to Category Theory
+\end_layout
+
+\begin_layout Section
+Exercises
+\end_layout
+
+\begin_layout Subsection
+Part 1
+\end_layout
+
+\begin_layout Subsubsection
+Observe that sets and functions do form a category 
+\begin_inset Formula $\mathbf{Set}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The objects of 
+\begin_inset Formula $\mathbf{Set}$
+\end_inset
+
+ are sets, and the morphisms are functions between sets.
+ Let 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ be two arbitrary sets, then 
+\begin_inset Formula $A,B\in\text{obj}(\mathbf{Set})$
+\end_inset
+
+ are objects in 
+\begin_inset Formula $\mathbf{Set}$
+\end_inset
+
+, and identity functions 
+\begin_inset Formula $1_{A}:A\to A$
+\end_inset
+
+, and 
+\begin_inset Formula $1_{B}:B\to B$
+\end_inset
+
+ exist and are given by 
+\begin_inset Formula $1_{A}(a)=a$
+\end_inset
+
+ and 
+\begin_inset Formula $1_{B}(b)=b$
+\end_inset
+
+ for all 
+\begin_inset Formula $b\in B$
+\end_inset
+
+ and 
+\begin_inset Formula $a\in A$
+\end_inset
+
+.
+ Now assume there exists a function 
+\begin_inset Formula $f:A\to B$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\mathbf{Set}$
+\end_inset
+
+ is a category, 
+\begin_inset Formula $f\circ1_{A}=f=1_{B}\circ f$
+\end_inset
+
+ must hold.
+ 
+\end_layout
+
+\begin_layout Standard
+To show this take any 
+\begin_inset Formula $a\in A$
+\end_inset
+
+, then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(f\circ1_{A})(a)=f(1_{A}(a))=f(a)=1_{B}(f(a))=(1_{B}\circ f)(a)
+\]
+
+\end_inset
+
+proves this is the case.
+\end_layout
+
+\begin_layout Standard
+If there are further objects 
+\begin_inset Formula $C,D\in\text{obj}(\mathbf{Set})$
+\end_inset
+
+, with functions 
+\begin_inset Formula $g:B\to C$
+\end_inset
+
+ and 
+\begin_inset Formula $h:C\to D$
+\end_inset
+
+, then 
+\begin_inset Formula $h\circ(g\circ f)=(h\circ g)\circ f$
+\end_inset
+
+ must hold.
+ 
+\end_layout
+
+\begin_layout Standard
+And for any 
+\begin_inset Formula $a\in A$
+\end_inset
+
+, because the usual composition of functions is associative
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h((g\circ f)(a))=h(g(f(a)))=(h\circ g)(f(a)).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Can you see that each poset is a category, and each monoid is a category?
+ Read that again.
+\end_layout
+
+\begin_layout Standard
+Posets are categories 
+\begin_inset Formula $\mathbf{Pos}$
+\end_inset
+
+ when you take objects to be pairs 
+\begin_inset Formula $(A,\le)$
+\end_inset
+
+ where 
+\begin_inset Formula $A$
+\end_inset
+
+ is a set and 
+\begin_inset Formula $\le$
+\end_inset
+
+ is a transitive, reflexive and anti-symmetric binary relation.
+ Morphisms in 
+\begin_inset Formula $\mathbf{Pos}$
+\end_inset
+
+ are monotone functions, so that if 
+\begin_inset Formula $(A,\le)$
+\end_inset
+
+ and 
+\begin_inset Formula $(B,\le)$
+\end_inset
+
+ are objects, then 
+\begin_inset Formula $f:(A,\le)\to(B,\le)$
+\end_inset
+
+ preserves structure, meaning that for any 
+\begin_inset Formula $a_{1},a_{2}\in A$
+\end_inset
+
+ if 
+\begin_inset Formula $a_{1}\le a_{2}$
+\end_inset
+
+ then 
+\begin_inset Formula $f(a_{1})\le f(a_{2})$
+\end_inset
+
+ must hold.
+ The identity morphism for an object 
+\begin_inset Formula $(S,\le)$
+\end_inset
+
+ is the function 
+\begin_inset Formula $1_{S}(s)=s$
+\end_inset
+
+ for any 
+\begin_inset Formula $s\in S$
+\end_inset
+
+.
+ Morphisms in 
+\begin_inset Formula $\mathbf{Pos}$
+\end_inset
+
+ admit composition, in that if 
+\begin_inset Formula $f:(A,\le)\to(B,\le)$
+\end_inset
+
+ and 
+\begin_inset Formula $g:(B,\le)\to(C,\le)$
+\end_inset
+
+ are monotone functions, then 
+\begin_inset Formula $g\circ f:(A,\le)\to(C,\le)$
+\end_inset
+
+ is also a monotone function.
+ And composition is associative.
+ 
+\end_layout
+
+\begin_layout Standard
+A monoid is a set 
+\begin_inset Formula $A$
+\end_inset
+
+ equipped with a binary relation 
+\begin_inset Formula $\bullet:A\times A\to A$
+\end_inset
+
+ that is associative, so that for all 
+\begin_inset Formula $a,b,c\in A,$
+\end_inset
+
+ then 
+\begin_inset Formula $(a\bullet b)\bullet c=a\bullet(b\bullet c)$
+\end_inset
+
+, and admits the identity element 
+\begin_inset Formula $1:A\to A$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ then 
+\begin_inset Formula $1\bullet a=a=a\bullet1$
+\end_inset
+
+.
+ Then the category 
+\begin_inset Formula $\mathbf{Mon}$
+\end_inset
+
+ of monoids has 
+\begin_inset Formula $A$
+\end_inset
+
+ as the singular object and 
+\begin_inset Formula $\bullet$
+\end_inset
+
+ as the morphisms.
+ By definition, 
+\begin_inset Formula $\bullet$
+\end_inset
+
+ is associative, and 
+\begin_inset Formula $1$
+\end_inset
+
+ performs the action of an identity morphism.
+\end_layout
+
+\begin_layout Subsection
+Part 2
+\end_layout
+
+\begin_layout Subsubsection
+The category 
+\begin_inset Formula $\mathbf{Pno}$
+\end_inset
+
+ described in this exercise may look less than exciting, but it plays and
+ important role in mathematics.
+ The objects of 
+\begin_inset Formula $\mathbf{Pno}$
+\end_inset
+
+ are structures 
+\begin_inset Formula $(A,\alpha,a)$
+\end_inset
+
+ where 
+\begin_inset Formula $A$
+\end_inset
+
+ is a set, and where 
+\begin_inset Formula $\alpha:A\to A$
+\end_inset
+
+ is a function, and 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ is a nominated element.
+ Given two such structures a morphism 
+\begin_inset Formula 
+\[
+(A,\alpha,a)\overset{f}{\to}(B,\beta,b)
+\]
+
+\end_inset
+
+ is a function 
+\begin_inset Formula $f:A\to B$
+\end_inset
+
+ which preserves the structure in the sense that 
+\begin_inset Formula 
+\[
+f\circ\alpha=\beta\circ f
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f(a)=b
+\]
+
+\end_inset
+
+hold.
+\end_layout
+
+\begin_layout Subsubsection*
+(a) Verify that 
+\begin_inset Formula $\mathbf{Pno}$
+\end_inset
+
+ is a category.
+\end_layout
+
+\begin_layout Standard
+To show: 
+\begin_inset Formula $\mathbf{Pno}$
+\end_inset
+
+ has identity morphisms that acts neutrally.
+ For 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ the identity 
+\begin_inset Formula $1_{A}:A\to A$
+\end_inset
+
+ is given by 
+\begin_inset Formula $1_{A}(a)=a$
+\end_inset
+
+, and for 
+\begin_inset Formula $b\in B$
+\end_inset
+
+ the identity 
+\begin_inset Formula $1_{B}:B\to B$
+\end_inset
+
+ is given by 
+\begin_inset Formula $1_{B}(b)=b$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then for any 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ then
+\begin_inset Formula 
+\[
+(f\circ1_{A})(a)=(1_{B}\circ f)(a)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f(1_{A}(a))=1_{B}(f(a))
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f(a)=b.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+(b) Show that 
+\begin_inset Formula $(\mathbb{N},\text{succ},0)$
+\end_inset
+
+ is a 
+\begin_inset Formula $\mathbf{Pno}\text{-object}$
+\end_inset
+
+ (where 
+\begin_inset Formula $\text{succ}$
+\end_inset
+
+ is the successor function).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+ is a set, 
+\begin_inset Formula $\text{succ}:\mathbb{N}\to\mathbb{N}$
+\end_inset
+
+, and 
+\begin_inset Formula $0\in\mathbb{N}$
+\end_inset
+
+.
+ So this object fits the description.
+\end_layout
+
+\begin_layout Subsubsection*
+(c) Show that for each 
+\begin_inset Formula $\mathbf{Pno}\text{-object}$
+\end_inset
+
+ 
+\begin_inset Formula $(A,\alpha,a)$
+\end_inset
+
+ there is a unique arrow
+\begin_inset Formula 
+\[
+(\mathbb{N},\text{succ},0)\to(A,\alpha,a)
+\]
+
+\end_inset
+
+and describe the behaviour of the carrying function.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $(A,\alpha,a_{1})$
+\end_inset
+
+ be an object in 
+\begin_inset Formula $\mathbf{Pno}$
+\end_inset
+
+, where 
+\begin_inset Formula $A=\{a_{1},a_{2},a_{2}\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Claim: there exists a morphism 
+\begin_inset Formula $f:(\mathbb{N},\text{succ},0)\to(A,\alpha,a_{1})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Construct 
+\begin_inset Formula 
+\[
+f(n)=\begin{cases}
+a_{1} & \text{if }n=0\\
+a_{2} & \text{if }n=1\\
+a_{3} & \text{otherwise}
+\end{cases}
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula 
+\[
+f\circ\text{succ}=\alpha\circ f
+\]
+
+\end_inset
+
+and so
+\begin_inset Formula 
+\[
+(f\circ\text{succ})(n)=f(\text{succ}(n))=f(n+1)=a_{n+1}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+(\alpha\circ f)(n)=\alpha(f(n))=\alpha(a_{n})
+\]
+
+\end_inset
+
+so that 
+\begin_inset Formula $\alpha(a_{n})=a_{n+1}$
+\end_inset
+
+ for 
+\begin_inset Formula $n\le2$
+\end_inset
+
+, and 
+\begin_inset Formula $\alpha(a_{n})=a_{n}$
+\end_inset
+
+ for 
+\begin_inset Formula $n>2.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To show: 
+\begin_inset Formula $f$
+\end_inset
+
+ is unique.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $g:(\mathbb{N},\text{succ},0)\to(A,\alpha,a_{1})$
+\end_inset
+
+ be another morphism, where 
+\begin_inset Formula $g:\mathbb{N}\to A$
+\end_inset
+
+ is a function.
+ Then 
+\begin_inset Formula 
+\[
+g\circ\text{succ}=\alpha\circ f=f\circ\text{succ}
+\]
+
+\end_inset
+
+and as
+\begin_inset Formula 
+\[
+g(0)=f(0)=a_{1}
+\]
+
+\end_inset
+
+then 
+\begin_inset Formula 
+\[
+g(n+1)=a_{n+2}=f(n+1)
+\]
+
+\end_inset
+
+for any 
+\begin_inset Formula $n\in\mathbb{N}.n\le2$
+\end_inset
+
+.
+ And 
+\begin_inset Formula 
+\[
+g(n+1)=a_{n+1}=f(n+1)
+\]
+
+\end_inset
+
+ for 
+\begin_inset Formula $n>2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Consider pairs 
+\begin_inset Formula $(A,X)$
+\end_inset
+
+ where 
+\begin_inset Formula $A$
+\end_inset
+
+ is a set and 
+\begin_inset Formula $X\subseteq A$
+\end_inset
+
+.
+ For two such pairs a morphism 
+\begin_inset Formula 
+\[
+(A,X)\overset{f}{\to}(B,Y)
+\]
+
+\end_inset
+
+is a function 
+\begin_inset Formula $f:A\to B$
+\end_inset
+
+ that represents the selected subsets, that is 
+\begin_inset Formula 
+\[
+f(x)\in Y
+\]
+
+\end_inset
+
+for each 
+\begin_inset Formula $x\in X$
+\end_inset
+
+.
+ Show that such pairs and morphisms form the category 
+\begin_inset Formula $\mathbf{SetD}$
+\end_inset
+
+, the category of sets with a distinguishing subset.
+\end_layout
+
+\end_body
+\end_document
