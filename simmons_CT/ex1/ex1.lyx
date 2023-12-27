@@ -446,7 +446,7 @@ To show:
 
  has identity morphisms that acts neutrally.
  For 
-\begin_inset Formula $a\in A$
+\begin_inset Formula $x\in A$
 \end_inset
 
  the identity 
@@ -454,11 +454,11 @@ To show:
 \end_inset
 
  is given by 
-\begin_inset Formula $1_{A}(a)=a$
+\begin_inset Formula $1_{A}(x)=x$
 \end_inset
 
 , and for 
-\begin_inset Formula $b\in B$
+\begin_inset Formula $y\in B$
 \end_inset
 
  the identity 
@@ -466,7 +466,7 @@ To show:
 \end_inset
 
  is given by 
-\begin_inset Formula $1_{B}(b)=b$
+\begin_inset Formula $1_{B}(y)=y$
 \end_inset
 
 .
@@ -475,13 +475,13 @@ To show:
 
 \begin_layout Standard
 Then for any 
-\begin_inset Formula $a\in A$
+\begin_inset Formula $x\in A$
 \end_inset
 
  then
 \begin_inset Formula 
 \[
-(f\circ1_{A})(a)=(1_{B}\circ f)(a)
+(f\circ1_{A})(x)=(1_{B}\circ f)(x)
 \]
 
 \end_inset
@@ -489,7 +489,7 @@ Then for any
 
 \begin_inset Formula 
 \[
-f(1_{A}(a))=1_{B}(f(a))
+f(1_{A}(x))=1_{B}(f(x))
 \]
 
 \end_inset
@@ -497,7 +497,7 @@ f(1_{A}(a))=1_{B}(f(a))
 
 \begin_inset Formula 
 \[
-f(a)=b.
+f(x)=y.
 \]
 
 \end_inset
@@ -751,6 +751,332 @@ for each
 \end_inset
 
 , the category of sets with a distinguishing subset.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $(C,Z)$
+\end_inset
+
+ be another pair where 
+\begin_inset Formula $C$
+\end_inset
+
+ is a set and 
+\begin_inset Formula $Z\subseteq C$
+\end_inset
+
+.
+ Then if a morphism 
+\begin_inset Formula $g:(B,Y)\to(C,Z)$
+\end_inset
+
+ exists it is a function 
+\begin_inset Formula $g:B\to C$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+To show 
+\begin_inset Formula $(g\circ f)(x)\in Z$
+\end_inset
+
+ for any 
+\begin_inset Formula $x\in X$
+\end_inset
+
+.
+ Fix 
+\begin_inset Formula $x\in X$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $f(x)\in Y$
+\end_inset
+
+ and 
+\begin_inset Formula $g(f(x))\in Z$
+\end_inset
+
+.
+ Identity morphisms and the associativity of composition is identical the
+ 
+\begin_inset Formula $\mathbf{Set}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Consider pairs 
+\begin_inset Formula $(A,R)$
+\end_inset
+
+ where 
+\begin_inset Formula $A$
+\end_inset
+
+ is a set and 
+\begin_inset Formula $R\subseteq A\times A$
+\end_inset
+
+ is a binary relation on 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Show that these pairs are the objects of a category.
+ You must find a sensible notion of morphism for such pairs.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $R$
+\end_inset
+
+ be given by 
+\begin_inset Formula $\le$
+\end_inset
+
+ so that 
+\begin_inset Formula $aRb$
+\end_inset
+
+ defines a poset structure for 
+\begin_inset Formula $(a,b)\in A\times A$
+\end_inset
+
+.
+ Then a category 
+\begin_inset Formula $C$
+\end_inset
+
+ can be formed by taking elements of 
+\begin_inset Formula $A$
+\end_inset
+
+ as objects and 
+\begin_inset Formula $\le$
+\end_inset
+
+ as morphisms so that 
+\begin_inset Formula $a\to b$
+\end_inset
+
+ exists where 
+\begin_inset Formula $a\le b$
+\end_inset
+
+.
+ Then the identity is simply 
+\begin_inset Formula $1:A\to A$
+\end_inset
+
+ given by 
+\begin_inset Formula $1(a)=a$
+\end_inset
+
+ for 
+\begin_inset Formula $a\in A$
+\end_inset
+
+.
+ And composition occurs through the binary relation so that if 
+\begin_inset Formula $a\to b$
+\end_inset
+
+ and 
+\begin_inset Formula $b\to c$
+\end_inset
+
+ then 
+\begin_inset Formula $a\to c$
+\end_inset
+
+ meaning 
+\begin_inset Formula $a\le b\wedge b\le c\implies a\le c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+A topological space 
+\begin_inset Formula $(S,OS)$
+\end_inset
+
+ is a set 
+\begin_inset Formula $S$
+\end_inset
+
+ furnished with a certain family 
+\begin_inset Formula $OS$
+\end_inset
+
+ of subsets of 
+\begin_inset Formula $S$
+\end_inset
+
+ (called the open sets of the space).
+ This family is required to contain both 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ and 
+\begin_inset Formula $S$
+\end_inset
+
+, be closed under 
+\begin_inset Formula $\cap$
+\end_inset
+
+ (binary intersection), and be closed under 
+\begin_inset Formula $\bigcup$
+\end_inset
+
+ (arbitrary unions).
+ A continuous map 
+\begin_inset Formula 
+\[
+(S,OS)\overset{\phi}{\to}(T,OT)
+\]
+
+\end_inset
+
+between two such spaces is a function 
+\begin_inset Formula 
+\[
+\phi:S\to T
+\]
+
+\end_inset
+
+such that
+\begin_inset Formula 
+\[
+\phi^{\leftarrow}(V)\in OS
+\]
+
+\end_inset
+
+for each 
+\begin_inset Formula $V\in OT$
+\end_inset
+
+.
+ Here 
+\begin_inset Formula $\phi^{\leftarrow}$
+\end_inset
+
+ is the inverse image map given by 
+\begin_inset Formula 
+\[
+x\in\phi^{\leftarrow}(V)\iff\phi(x)\in V
+\]
+
+\end_inset
+
+for each 
+\begin_inset Formula $V\in OT$
+\end_inset
+
+ and 
+\begin_inset Formula $x\in S$
+\end_inset
+
+.
+ Show that these spaces and maps form a category 
+\begin_inset Formula $\mathbf{Top}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+* TODO *
+\end_layout
+
+\begin_layout Subsubsection
+Let 
+\begin_inset Formula $A$
+\end_inset
+
+ be an arbitrary object of an arbitrary category 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+.
+ Show that 
+\begin_inset Formula $\mathbf{C}[A,A]$
+\end_inset
+
+ is a monoid under composition.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A$
+\end_inset
+
+ is an object so 
+\begin_inset Formula $1_{A}:A\to A$
+\end_inset
+
+ exists, and the composition of morphisms in 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+ is associative by definition.
+\end_layout
+
+\begin_layout Subsubsection
+Fill in the details missing from 
+\begin_inset Formula $\mathbf{Pnf}$
+\end_inset
+
+.
+ In particular, you should show that composition of partial functions is
+ associative.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+A pointed set is a set 
+\begin_inset Formula $S$
+\end_inset
+
+ with a nominated element which we usually write as 
+\begin_inset Formula $\bot$
+\end_inset
+
+.
+ An arrow 
+\begin_inset Formula $\phi:S\to T$
+\end_inset
+
+ between two such pointed sets is a function which respects the nominated
+ points, that is 
+\begin_inset Formula $\phi(\bot)=\bot$
+\end_inset
+
+.
+ Almost trivially, pointed sets with these arrows form a category 
+\begin_inset Formula $\mathbf{Set}_{\bot}$
+\end_inset
+
+.
+ Try to show that 
+\begin_inset Formula $\mathbf{Set}_{\bot}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{Pfn}$
+\end_inset
+
+ are `essentially the same` category.
 \end_layout
 
 \end_body
